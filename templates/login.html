@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADSHIP - Online Shopping Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'logins.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <div class="box">
+                <h1 class="heading">Login @ <span class="colgold">MADSHIP</span></h1>
+                <form action="{% url 'home'%}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <h3>Username</h3>
+                        <input type="text" name="username" id="uname" class="text">
+                    </div>
+                    <div>
+                        <h3>Password</h3>
+                        <input type="password" name="pass" id="password" class="password text">
+                    </div>
+                    <div class="error" id="error">{{error}}</div>
+                    <div class="lgbtn">
+                        <!-- <a href="" class="lbtn"><input type="button" value="Login" class="submitbtn"></a> -->
+                        <input type="submit" value="Login" class="submitbtn" onclick="checkLogin()">
+                    </div>
+                    <div class="reghere">
+                        <span>New User? <a href="{% url 'register' %}">Register Here</a></span>
+                    </div>
+
+                </form>
+            </div>
+            <img src="{% static 'imglog.png' %}" alt="" width="390px" height="550px">
+        </div>
+    </div>
+</body>
+<script src="{% static 'javascript.js' %}"></script>
+
+</html>

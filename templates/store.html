@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - MADSHIP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'storeses.css' %}">
+</head>
+
+<body>
+    <nav class="greycon">
+        <h1>MAD<span id="colship">SHIP</span></h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+    </nav>
+    <div class="mainheading">
+        <h1 class="mainh1">Choose a <span class="storegold">Category</span></h1>
+        <div class="storeimages">
+            <div class="menimg  product">
+                <a href="{% url 'items1' %}" class="txt">
+                    <img src="{% static 'menfashion.png' %}" alt="" class="img-size">
+                    <div class="bannertxt banner">
+                        <h1>Men's Fashion</h1>
+                        <button class="menshow"><a href="{% url 'items1' %}">View →</a></button>
+                    </div>
+                </a>
+            </div>
+            <div class="womenimg  product">
+                <a href="{% url 'items4' %}" class="txt">
+                    <img src="{% static 'womenfashion.png' %}" alt="" class="img-size">
+                    <div class="bannerwomen banner">
+                        <h1>Women's Fashion</h1>
+                        <button class="menshow"><a href="{% url 'items4' %}">View →</a></button>
+                    </div>
+                </a>
+
+            </div>
+            <div class="elecimg  product">
+                <a href="{% url 'items2' %}" class="txt">
+                    <img src="{% static 'electronics.png' %}" alt="" class="img-size">
+                    <div class="bannerelec banner">
+                        <h1>Electronics</h1>
+                        <button class="menshow"><a href="{% url 'items2' %}">View →</a></button>
+                    </div>
+                </a>
+            </div>
+            <div class="elecimg  product">
+                <a href="{% url 'items3' %}" class="txt">
+                    <img src="{% static 'OIP.png' %}" alt="" class="img-size" width="300px" height="370px">
+                    <div class="bannerelec banner">
+                        <h1>Shoes</h1>
+                        <button class="menshow"><a href="{% url 'items2' %}">View →</a></button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.facebook.com/john.byro.56"><img src="{% static 'facebook.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.linkedin.com/in/only4aj/"><img src="{% static 'linkedin.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.instagram.com/only4aj/"><img src="{% static 'instagram.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.youtube.com/channel/UC23C6Vghe1eROCsvEyM-4hQ"><img src="{% static 'youtube.png' %}"
+                    alt="" height="35px" width="35px"></a>
+        </div>
+        <div class="copyright">
+            <h3>
+                Copyright © 2023 MADSHIP
+            </h3>
+            <p class="rights">All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+<script src="{% static 'javascript.js' %}"></script>
+</html>

@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body::-webkit-scrollbar{
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: transparent;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li {
+    text-decoration: none;
+    /* padding: 50px; */
+    padding: 10px;
+    padding-right: 20px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding-right: 20px;
+}
+
+#colship {
+    color: rgb(199, 174, 30);
+    padding-right: 100px;
+}
+
+.greycon {
+    background-color: rgb(15, 15, 15);
+    height: 50px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    /* padding: 30px; */
+    padding: 5px;
+    list-style-type: none;
+    color: rgb(231, 225, 225);
+    /* font-size: 25px; */
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.5s all;
+}
+
+
+h1 {
+    color: rgb(184, 179, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 20px;
+    padding-right: 70px;
+    font-size: 30px;
+}
+
+#login {
+
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    /* border: 4px solid rgb(199, 174, 30); */
+    /* border-radius: 15px; */
+    border: 3px solid rgb(199, 174, 30);
+    border-radius: 13px;
+
+}
+
+
+#login a {
+    text-decoration: none;
+    color: rgb(199, 174, 30);
+    padding: 4px 7px;
+}
+
+#login:hover {
+    background-color: rgb(212, 185, 33);
+    /* border-radius: 15px; */
+
+}
+
+#login a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#cartimg {
+    width: 50px;
+    height: 50px;
+    padding-right: 45px;
+
+}
+
+nav ul li a:hover {
+    color: rgb(226, 199, 42);
+    transition: ease-in;
+}
+
+/* 
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li{
+    text-decoration: none;
+    padding: 50px;
+    padding-right: 20px;
+}
+
+ul{
+    list-style: none;
+    display: flex;    
+    padding-right: 50px;
+}
+
+#colship{
+    color: rgb(199, 174, 30);
+    padding-right: 100px;
+}
+
+.greycon{
+    background-color: rgb(15, 15, 15);
+    height: 50px;
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    padding: 30px;
+    list-style-type: none;
+    color: rgb(231, 225, 225);
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.5s all;
+}
+
+
+h1{
+    color: rgb(184, 179, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 20px;
+    padding-right: 70px;
+    font-size: 40px;
+}
+
+#login{
+    
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    border: 4px solid rgb(199, 174, 30);
+    border-radius: 15px;
+}
+
+#cartimg{
+    width: 50px;
+    height: 50px;
+    padding-right: 50px;
+    
+}
+
+#login a{
+    text-decoration: none;
+    color: rgb(199, 174, 30);
+}
+
+#login:hover{
+    background-color: rgb(212, 185, 33);
+    border-radius: 15px;
+}
+
+#login a:hover{
+    color: white;
+}
+
+nav ul li a:hover{
+    color: rgb(226, 199, 42);
+    transition: ease-in;
+} */
+
+.menshow {
+    /* font-size: 25px; */
+    /* margin-left: 25px; */
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    background-color: rgb(54, 54, 54);
+    border: 5px solid rgb(54, 54, 54);
+    /* border-radius: 10px; */
+    border-radius: 6px;
+    padding: 0px 5px;
+}
+
+.menshow:hover{
+    cursor: pointer;
+}
+
+
+.menshow a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+}
+
+
+.menimg {
+    /* position: relative; */
+    /* border: 10px solid black; */
+    border: 5px solid black;
+    border-radius: 8px;
+}
+
+.womenimg {
+    /* border: 10px solid black;*/
+    border: 5px solid black;
+    border-radius: 8px;
+}
+
+
+.elecimg {
+    /* border: 10px solid black; */
+    border: 5px solid black;
+    border-radius: 8px;
+}
+
+.product{
+    margin: 10px 0;
+    position: relative;
+    text-decoration: none;
+}
+.txt{
+    text-decoration: none;
+}
+/* .product img{
+    height: 100%;
+} */
+
+.bannertxt {
+    position: absolute;
+    /* top: 0;
+    padding-top: 450px; */
+}
+
+.storeimages {
+    /* display: flex;
+    justify-content: space-around; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 30px;
+    overflow: scroll;
+}
+
+.storeimages::-webkit-scrollbar{
+    background: transparent;
+}
+.storeimages::-webkit-scrollbar-thumb{
+    background: transparent;
+    color: white;
+}
+
+
+.bannertxt h1 {
+    color: rgb(209, 207, 207);
+}
+
+/* 
+footer {
+    margin-top: 1px;
+    padding-bottom: 100px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+
+
+.socialmedia {
+    padding-left: 850px;
+    word-spacing: 20px;
+    padding-top: 50px;
+}
+
+.copyright {
+    padding-left: 830px;
+    word-spacing: 2px;
+} */
+
+
+/* New Code */
+footer {
+    /* margin-top: 80px; */
+    margin-top: 20px;
+    /* padding-bottom: 100px; */
+    padding-bottom: 50px;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+}
+
+
+.socialmedia {
+    /* padding-left: 850px; */
+    /* padding-top: 50px; */
+    word-spacing: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.copyright {
+    /* padding-left: 830px; */
+    word-spacing: 2px;
+}
+
+
+.rights {
+    color: rgb(165, 163, 163);
+    padding-left: 60px;
+}
+
+/* 
+.firstsep {
+    border: 2px solid rgb(214, 210, 210);
+} */
+/*  */
+
+
+.bannerwomen {
+    position: absolute;
+    /* top: 0;
+    padding-top: 620px; */
+}
+
+.bannerwomen h1 {
+    color: rgb(240, 240, 240);
+}
+
+
+.bannerelec {
+    position: absolute;
+    /* top: 0;
+    padding-top: 620px; */
+}
+
+
+.bannerelec h1 {
+    color: rgb(247, 245, 245);
+}
+
+
+.storegold {
+    color: rgb(221, 173, 53);
+}
+
+
+.mainh1 {
+    /* padding-left: 55px; */
+    color: grey;
+    margin-top: 20px;
+}
+
+/* Extra CSS */
+.mainheading{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.banner{
+    position: absolute;
+    bottom: 10px;
+}
+
+.banner h1{
+    font-size: 25px;
+    text-shadow: 0 0 10px black;
+}
+
+/* .img-size{
+    width:300px;
+    height:370px;
+} */
+.img-size{
+    width: 260px;
+    height:330px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart - MADSHIP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'carts.css' %}">
+</head>
+<body>
+    <nav class="greycon">
+        <h1>MAD<span id="colship">SHIP</span></h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <button id="login"><a href="/login">Sign In</a></button>
+        <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <a href=""><img src="{% static 'shopcart.png' %}" alt=""></a>
+    </nav>

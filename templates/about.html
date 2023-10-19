@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - MADSHIP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Satisfy&display=swap" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'aboutess.css' %}">
+</head>
+
+<body>
+    <nav class="greycon">
+        <h1>MAD<span id="colship">SHIP</span></h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <!-- <button id="login"><a href="/login">Sign In</a></button> -->
+        <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+    </nav>
+
+    <h1 class="visionhead">Our Vision</h1>
+    <div class="firstsep df">
+        <div class="ourvision df">
+            <div class="imageabt">
+                <img src="{% static 'abouthome.png' %}" alt="" height="390px" width="550px">
+            </div>
+            <div class="parag">
+                <p><span class="quotes">“</span> The vision of our online shopping website
+                    is to create a seamless and delightful
+                    shopping experience for customers around
+                    the world. We aspire to be a one-stop
+                    destination for all their needs, offering
+                    a vast and diverse range of high-quality products.
+                    Our commitment to innovation and user-centric
+                    design ensures that every visit to our platform
+                    is intuitive, engaging, and secure. We aim to
+                    foster trust and loyalty by providing excellent
+                    customer service and quick, reliable deliveries.
+                    Our vision is to be the preferred choice for online
+                    shopping, where customers find convenience, choice, and
+                    satisfaction in every click. <span class="quotes">”</span></p>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="teamhead df">Our Team</h1>
+    <div class="df design">
+        <div class="secondsep keyanima df ">
+            <div class="personholder df">
+                <div class="personimg">
+                    <img src="{% static 'AnshJuneja.png' %}" alt="" class="img-size">
+                </div>
+                <div>
+                    <div class="name">
+                        <h2>Ansh Juneja</h2>
+                    </div>
+                    <div class="skills">
+                        <p>Role: Full-Stack Developer</p>
+                        <p>Skills: HTML, CSS, JS, DJANGO, MYSQL, Canva</p>
+                    </div>
+                    <div class="favquote">
+                        <p>“Any code of your own that you haven’t looked at for six or more months might as well have
+                            been<br>
+                            written by someone else.”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line1 line l1"></div>
+        <div class="line2 line l1"></div>
+        <div class="line3 line l1"></div>
+        <div class="fancysep keyanima df">
+            <div class=" personholder df">
+                <div class="remaincontent">
+                    <div class="name">
+                        <h2>Bratadipta Mondal</h2>
+                    </div>
+                    <div class="skills">
+                        <p>Role: Full-Stack Developer</p>
+                        <p>Skills: HTML, CSS, JS, DJANGO, MYSQL</p>
+                    </div>
+                    <div class="favquote">
+                        <p>“Always code as if the guy who ends up maintaining your code will be a violent psychopath who
+                            knows
+                            where you live.”</p>
+                    </div>
+                </div>
+                <div class="personimg1">
+                    <img src="{% static 'BratadiptaMondal.png' %}" alt="" class="img-size imgme">
+                </div>
+            </div>
+        </div>
+        <div class="line4 line l2"></div>
+        <div class="line5 line l2"></div>
+        <div class="line6 line l2"></div>
+        <div class="fancysep keyanima md df">
+            <div class="personholder df">
+                <div class="personimg">
+                    <img src="{% static 'Madeeha.png' %}" alt="" class="img-size">
+                </div>
+                <div class="remaincontent">
+                    <div class="name">
+                        <h2>Madeeha</h2>
+                    </div>
+                    <div class="skills">
+                        <p>Role: UI/UX, BackEnd Developer</p>
+                        <p>Skills: DJango, Canva</p>
+                    </div>
+                    <div class="favquote">
+                        <p>“Web design is not just about creating pretty layouts. It’s about understanding the marketing
+                            challenge<br> behind your business.”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.facebook.com/john.byro.56"><img src="{% static 'facebook.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.linkedin.com/in/only4aj/"><img src="{% static 'linkedin.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.instagram.com/only4aj/"><img src="{% static 'instagram.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.youtube.com/channel/UC23C6Vghe1eROCsvEyM-4hQ"><img src="{% static 'youtube.png' %}"
+                    alt="" height="35px" width="35px"></a>
+        </div>
+        <div class="copyright">
+            <h3>
+                Copyright © 2023 MADSHIP
+            </h3>
+            <p class="rights">All Rights Reserved</p>
+        </div>
+    </footer>

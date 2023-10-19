@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>items - MADSHIP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'itemes.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="greycon">
+            <h1>MAD<span id="colship">SHIP</span></h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/store">Store</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+            <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row df" id="setText">
+                <div class="box-one bg-box df">
+                    <p>Kurta for Men</p>
+                </div>
+                <div class="box-two bg-box df">
+                    {%for i in data %}
+                    {% if i.item_id > 1000 and i.item_id < 1099 %} <div class="box df">
+                        <form action="{% url 'product'%}" method="post" class="box df">
+                            {% csrf_token %}
+                            <button type="submit" style="border: none;">
+                                <a onclick="transfer()" type="submit">
+                                    <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
+                                    <img src="{{i.image.url}}" alt="kurta">
+                                </a>
+                            </button>
+                            <div class="box-data df fnt-sz">
+                                <p class="brand">{{i.brand}}</p>
+                                <p class="title">{{i.title}}</p>
+                                <div class="price df">
+                                    <p class="dis-p fnt-sz">₹ {{i.dis_price}}</p>
+                                    <p class="act-p fnt-sz">₹{{i.act_price}}</p>
+                                    <p class="dis fnt-sz">{{i.offer}}% off</p>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+<script>
+    function transfer() {
+        // let t = document.getElementById("title").textContent
+        // localStorage.setItem("itemtitle",t)
+        // console.log(t)
+        // window.location.href = "{% url 'product'%}"
+    }
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MADSHIP</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contactes.css' %}">
+</head>
+
+<body>
+    <nav class="greycon">
+        <h1>MAD<span id="colship">SHIP</span></h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <!-- <button id="login"><a href="/login">Sign In</a></button> -->
+        <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+    </nav>
+    <div class="container df">
+        <div class="maincontainer df">
+            <img src="{% static 'madcontact.png' %}" alt="" class="imgsz">
+            <div class="sidecontainer df">
+                <h1 class="query">Ask Your Queries</h1>
+                <form action="POST" class="df">
+                    <div class="flexfields df">
+                        <input class="field" type="text" name="firstname" id="firstname" placeholder="First Name">
+                        <input class="field" type="text" name="lastname" id="lastname" placeholder="Last Name">
+                    </div>
+                    <input class="email" type="email" name="email" id="email" placeholder="Email ID">
+                    <textarea class="description" name="description" id="description"
+                        placeholder="Write Your Description Here..."></textarea>
+                    <input class="subbtn" type="button" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.facebook.com/john.byro.56"><img src="{% static 'facebook.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.linkedin.com/in/only4aj/"><img src="{% static 'linkedin.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.instagram.com/only4aj/"><img src="{% static 'instagram.png' %}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.youtube.com/channel/UC23C6Vghe1eROCsvEyM-4hQ"><img src="{% static 'youtube.png' %}"
+                    alt="" height="35px" width="35px"></a>
+        </div>
+        <div class="copyright">
+            <h3>
+                Copyright © 2023 MADSHIP
+            </h3>
+            <p class="rights">All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

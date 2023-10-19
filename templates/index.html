@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADSHIP - Online Shopping Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stylees.css' %}">
+</head>
+
+<body>
+    <nav class="greycon">
+        <h1>MAD<span id="colship">SHIP</span></h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <button type="submit" id="login" class="login"><a href="/register">Sign In</a></button>
+        <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+    </nav>
+    <div class="mainsection">
+        <div class="sideimage">
+            <img src="{% static 'sideimg.png' %}" alt="" height="220px">
+        </div>
+        <div class="mainbody">
+            <div class="mainhead">
+                <h1 class="headning">Shop <span class="at">@</span> <span class="madship">MADSHIP</span></h1>
+                <h3 class="headning3">DISCOUNT | SHOPPING | COUPONS</h3>
+                <p class="paraning">Whatever you’ve got in mind, we’ve got inside.</p>
+            </div>
+            <div class="mainbtn">
+                <button class="shopbtn"><a href="#1">Shop Now</a></button>
+                <button class="signbtn"><a href="/login">Sign In</a></button>
+            </div>
+        </div>
+        <div class="mainimage">
+            <img src="{% static 'mainimg.png' %}" alt="" height="370px" width="370px">
+        </div>
+    </div>
+    <div class="advertise">
+        <div class="firstad">
+            <div class="firsttwo">
+                <!-- <img src="{% static "discount.png" %}" alt="" height= "100px" class= "firstimg"> -->
+                <img src="{% static 'discount.png' %}" alt="" height="70px" class="firstimg">
+                <h2 class="fnt">DISCOUNT</h2>
+            </div>
+            <p class="firstpara">Here You'll Get Bumper Discounts</p>
+        </div>
+        <div class="firstsep">
+
+        </div>
+        <div class="secondad">
+            <div class="secondtwo">
+                <!-- <img src="{% static "sale.png" %}" alt="" height= "100px" class= "secondimg"> -->
+                <img src="{% static 'sale.png' %}" alt="" height="70px" class="secondimg">
+                <h2 class="fnt">MONTHLY SALE</h2>
+            </div>
+            <p class="secondpara">Here You'll Get Monthly Sales</p>
+        </div>
+        <div class="firstsep">
+
+        </div>
+        <div class="thirdad">
+            <div class="thirdtwo">
+                <!-- <img src="{% static "qc.png" %}" alt="" height= "100px" class= "thirdimg"> -->
+                <img src="{% static 'qc.png' %}" alt="" height="70px" class="thirdimg">
+                <h2 class="fnt">QUALITY CHECKED</h2>
+            </div>
+            <p class="thirdpara">All Products are Quality Checked</p>
+        </div>
+    </div>
+    <div class="conshopbycat" id="1">
+        <h1 class="headbycat"><span class="shopby">SHOP</span> BY <span class="goldcat">CATEGORY</span></h1>
+    </div>
+    <div class="blockproducts">
+        <div class="block1">
+            <a href=""><img src="{% static 'kurta.jpg' %}" alt="" height="200px" width="200px"></a>
+            <h2>Kurta</h2>
+            <p class="blockpara1">Men's Fashion</p>
+        </div>
+        <div class="block2">
+            <a href=""><img src="{% static 'suit.jpg' %}" alt="" height="200px" width="200px"></a>
+            <h2>Formal</h2>
+            <p class="blockpara2">Women's Fashion</p>
+        </div>
+        <div class="block3">
+            <a href=""><img src="{% static 'shoes.png' %}" alt="" height="200px" width="200px"></a>
+            <h2>Shoes</h2>
+            <p class="blockpara3">Footwears</p>
+        </div>
+        <div class="block4">
+            <a href=""><img src="{% static 'iphone14pro.png' %}" alt="" height="200px" width="200px"></a>
+            <h2>iPhone 14 Pro</h2>
+            <p class="blockpara4">Electronics</p>
+        </div>
+
+    </div>
+    <div class="vcsbtn">
+        <button class="viewbtn"><a href="">View All</a></button>
+    </div>
+
+
+    <div class="conbestseller">
+        <h1 class="headbestseller"><span class="shopby">BEST</span> <span class="goldcat">SELLER</span></h1>
+    </div>
+    <div class="rollproducts">
+        <div class="roll1 roll">
+            <a href=""><img src="{% static 'kurta.jpg'%}" alt="" height="200px" width="200px"></a>
+            <h2>Kurta</h2>
+            <p class="blockpara1">Men's Fashion</p>
+        </div>
+        <div class="roll2 roll">
+            <a href=""><img src="{% static 'suit.jpg'%}" alt="" height="200px" width="200px"></a>
+            <h2>Formal</h2>
+            <p class="blockpara2">Women's Fashion</p>
+        </div>
+        <div class="roll3 roll">
+            <a href=""><img src="{% static 'shoes.png'%}" alt="" height="200px" width="200px"></a>
+            <h2>Shoes</h2>
+            <p class="blockpara3">Footwears</p>
+        </div>
+        <div class="roll4 roll">
+            <a href=""><img src="{% static 'iphone14pro.png'%}" alt="" height="200px" width="200px"></a>
+            <h2>iPhone 14 Pro</h2>
+            <p class="blockpara4">Electronics</p>
+        </div>
+        <div class="roll1 roll">
+            <a href=""><img src="{% static 'kurta.jpg'%}" alt="" height="200px" width="200px"></a>
+            <h2>Kurta</h2>
+            <p class="blockpara1">Men's Fashion</p>
+        </div>
+        <div class="roll2 roll">
+            <a href=""><img src="{% static 'suit.jpg'%}" alt="" height="200px" width="200px"></a>
+            <h2>Formal</h2>
+            <p class="blockpara2">Women's Fashion</p>
+        </div>
+        <div class="roll3 roll">
+            <a href=""><img src="{% static 'shoes.png'%}" alt="" height="200px" width="200px"></a>
+            <h2>Shoes</h2>
+            <p class="blockpara3">Footwears</p>
+        </div>
+        <div class="roll4 roll">
+            <a href=""><img src="{% static 'iphone14pro.png'%}" alt="" height="200px" width="200px"></a>
+            <h2>iPhone 14 Pro</h2>
+            <p class="blockpara4">Electronics</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="socialmedia">
+            <a href="https://www.facebook.com/john.byro.56"><img src="{% static 'facebook.png'%}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.linkedin.com/in/only4aj/"><img src="{% static 'linkedin.png'%}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.instagram.com/only4aj/"><img src="{% static 'instagram.png'%}" alt="" height="35px"
+                    width="35px"></a>
+            <a href="https://www.youtube.com/channel/UC23C6Vghe1eROCsvEyM-4hQ"><img src="{% static 'youtube.png' %}"
+                    alt="" height="35px" width="35px"></a>
+        </div>
+        <div class="copyright">
+            <h3>
+                Copyright © 2023 MADSHIP
+            </h3>
+            <p class="rights">All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

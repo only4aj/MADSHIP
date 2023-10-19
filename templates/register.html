@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADSHIP - Online Shopping Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'registers.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="flexbox">
+            <img src="{% static 'imgreg.png' %}" alt="" width="390px" height="550px">
+            <div class="box">
+                <h1 class="heading">Register @ <span class="colgold">MADSHIP</span></h1>
+                <form action="{% url 'Setdata' %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <h3>Username</h3>
+                        <input type="text" name="username" id="username" class="text">
+                    </div>
+                    <div>
+                        <h3>Email Address</h3>
+                        <input type="email" name="email" id="email" class="email text">
+                    </div>
+                    <div>
+                        <h3>Phone Number</h3>
+                        <input type="tel" name="phone" id="phone" class="phone text">
+                    </div>
+                    <div>
+                        <h3>Password</h3>
+                        <input type="password" name="pass" id="pass" class="password text">
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="accept" id="accept">
+                        <span>I have read the <a href="{% url 'term' %}">Terms & Conditions</a></span>
+                    </div>
+                    <div>
+                        <!-- <a href="" class= "sbtn"><input type="button" value="Sign Up" class="submitbtn"></a> -->
+                        <input type="submit" value="Sign Up" class="submitbtn" onclick="checkRegister()">
+                    </div>
+                    <div class="loghere">
+                        <span>Already Have an Account? <a href="{% url 'login' %}">Login Here</a></span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'javascript.js' %}"></script>
+
+</html>
