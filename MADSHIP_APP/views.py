@@ -68,7 +68,10 @@ def verification(request):
     data.save()
     return render(request,'login.html',{'error':''})
 
-def random(request):
-    item_name = request.POST.get('id')
+def product(request):
+    itemId = request.POST.get('id')
     data = ProductItem.objects.all()
-    return render(request,'random.html',{'item':item_name,'data':data})
+    for i in data:
+        if str(i.item_id) == itemId:
+            return render(request,'product.html',{'data':i})
+    return render(request,'product.html',{'data':"error"})

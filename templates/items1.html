@@ -31,11 +31,12 @@
                 </div>
                 <div class="box-two bg-box df">
                     {%for i in data %}
-                    {% if i.item_id > 1000 and i.item_id < 1099 %} <div class="box df">
+                    {% if i.item_id > 1000 and i.item_id < 1099 %} 
+                    <div class="box df">
                         <form action="{% url 'product'%}" method="post" class="box df">
                             {% csrf_token %}
                             <button type="submit" style="border: none;">
-                                <a onclick="transfer()" type="submit">
+                                <a>
                                     <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
                                     <img src="{{i.image.url}}" alt="kurta">
                                 </a>
@@ -50,21 +51,13 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% endif %}
-                {% endfor %}
             </div>
-        </div>
         </div>
     </main>
 </body>
-<script>
-    function transfer() {
-        // let t = document.getElementById("title").textContent
-        // localStorage.setItem("itemtitle",t)
-        // console.log(t)
-        // window.location.href = "{% url 'product'%}"
-    }
-</script>
-
+<script src="{% static 'javascript.js' %}"></script>
 </html>

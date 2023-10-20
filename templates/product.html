@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'product.css'%}">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <nav class="greycon">
+            <h1>MAD<span id="colship">SHIP</span></h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/store">Store</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+            <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        </nav>
+        <div class="container df">
+            <div class="image df"><img src="{{data.image.url}}" alt=""></div>
+            <div>
+                <div class="data df">
+                    <div class="comn brd">{{data.brand}}</div>
+                    <div class="comn ttl ">{{data.title}}</div>
+                    <div class="comn pricespl df">
+                        <span>Special Price</span>
+                        <div class="spl price df">
+                            <div class="dis">₹{{data.dis_price}}</div>
+                            <div class="act">₹{{data.act_price}}</div>
+                            <div class="ofr">{{data.offer}}%</div>
+                        </div>
+                    </div>
+                    <div class="comn dtl df ">
+                        <span>Details</span>
+                        <p>{{data.details}}</p>
+                    </div>
+                    <div class="comn dscrn df dtl">
+                        <span>Description</span>
+                        <p>{{data.description}}</p>
+                    </div>
+                </div>
+                <div class="btnbox">
+                    <form action="" class="df">
+                        <button type="submit" class="addtcrd">Add to Card</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

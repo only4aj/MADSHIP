@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li {
+    text-decoration: none;
+    /* padding: 50px; */
+    padding: 10px;
+    padding-right: 20px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding-right: 20px;
+}
+
+#colship {
+    color: rgb(199, 174, 30);
+    padding-right: 100px;
+}
+
+.greycon {
+    background-color: rgb(15, 15, 15);
+    height: 50px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    /* padding: 30px; */
+    padding: 5px;
+    list-style-type: none;
+    color: rgb(231, 225, 225);
+    /* font-size: 25px; */
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.5s all;
+}
+
+.df {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    flex-direction: row;
+    gap: 10px;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.image {
+    width: 430px;
+    height: 550px;
+    box-shadow: 0 0 10px rgb(201, 201, 201);
+    border-radius: 12px;
+}
+
+.data {
+    width: 750px;
+    border-radius: 12px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    /* gap: 5px; */
+    padding-top: 5px;
+    min-height: 500px;
+}
+
+.image img {
+    width: 430px;
+    height: 550px;
+    border-radius: 12px;
+}
+
+.comn {
+    width: 700px;
+}
+
+.brd {
+    color: gray;
+    font-size: 23px;
+}
+
+.ttl {
+    font-size: 27px;
+}
+
+.pricespl {
+    flex-direction: column;
+}
+
+.price {
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.pricespl span {
+    font-size: 16px;
+    color: green;
+    margin-top: 10px;
+}
+
+.dis {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.act {
+    font-size: 20px;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.ofr {
+    font-size: 20px;
+    color: green;
+}
+
+.dtl {
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.dtl span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+form {
+    width: 750px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.addtcrd {
+    width: 700px;
+    height: 30px;
+    font-size: 25px;
+    background: #ffe65d;
+    border: none;
+    border-radius: 10px;
+}
+
+.addtcrd:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px #ded49e;
+}

@@ -20,7 +20,7 @@ urlpatterns = [
     path("items3/", views.items3, name = "items3"),
     path("contact/", views.contact, name = "contact"),
     path("items4/", views.items4, name = "items4"),
-    path("product/", views.random, name = "product"),
+    path("product/", views.product, name = "product"),
 ]
 
 if settings.DEBUG:

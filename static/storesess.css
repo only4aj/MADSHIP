@@ -252,6 +252,7 @@ nav ul li a:hover{
 .txt{
     text-decoration: none;
 }
+
 /* .product img{
     height: 100%;
 } */
@@ -406,12 +407,9 @@ footer {
 .banner h1{
     font-size: 25px;
     text-shadow: 0 0 10px black;
+    padding: 0 15px;
 }
 
-/* .img-size{
-    width:300px;
-    height:370px;
-} */
 .img-size{
     width: 260px;
     height:330px;
