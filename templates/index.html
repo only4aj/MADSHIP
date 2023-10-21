@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MADSHIP - Online Shopping Store</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styless.css' %}">
 </head>
 
 <body>
@@ -104,7 +105,7 @@
     </div>
 
 
-    <div class="conbestseller">
+    {% comment %} <div class="conbestseller">
         <h1 class="headbestseller"><span class="shopby">BEST</span> <span class="goldcat">SELLER</span></h1>
     </div>
     <div class="rollproducts">
@@ -149,7 +150,39 @@
             <p class="blockpara4">Electronics</p>
         </div>
 
+    </div> {% endcomment %}
+    <div class="testysep">
+
     </div>
+    <div class="testyblock">
+        <div class="testyupper">
+            <h1 class= "testyhead">TESTIMONIALS</h1>
+            <p class= "testypara">“See what our customers thinks about us”</p>
+        </div>
+        <div class="flextesty">
+            <div class="testimonial">
+                <p class="testypeepsay"><span class= "testyquote">“</span><br>MADSHIP makes online shopping a breeze with its vast selection and seamless user experience. I'm a happy, repeat customer!</p>
+                <img src="{% static "testyfirstpic.png" %}" alt="" class= "peeppic" width="50px" height= "50px">
+                <h4 class= "peepname">Raghav Jain</h4>
+            </div>
+            <div class="testimonial">
+                <p class="testypeepsay"><span class= "testyquote">“</span><br>MADSHIP is my go-to online shopping destination – their quality products, competitive prices, and fast delivery keep me coming back for more!</p>
+                <img src="{% static "testysecondpic.png" %}" alt="" class= "peeppic" width="50px" height= "50px">
+                <h4 class= "peepname">Arushi Sinha</h4>
+            </div>
+            <div class="testimonial">
+                <p class="testypeepsay"><span class= "testyquote">“</span><br>Discover the ultimate shopping experience at MADSHIP, where variety and convenience meet. Shop here for your every desire!</p>
+                <img src="{% static "testythirdpic.png" %}" alt="" class= "peeppic" width="50px" height= "50px">
+                <h4 class= "peepname">Vivek Shukla</h4>
+            </div>
+
+        </div>
+    </div>
+    <div class="testyendsep">
+
+    </div>
+
+    <div class="freqask"></div>
 
     <footer>
         <div class="socialmedia">
