@@ -18,10 +18,16 @@ class ProductItem(models.Model):
     act_price = models.IntegerField()
     offer = models.IntegerField()
     item_id = models.IntegerField()
-    details = models.CharField(max_length=1000)
+    details = models.CharField(max_length=1000, default="Default Value")
     description = models.CharField(max_length=2000)
     image = models.ImageField(upload_to='images',width_field="width")
-    width = models.IntegerField()
+    width = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return self.title
+    
+class Cart(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    product = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
