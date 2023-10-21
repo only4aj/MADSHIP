@@ -143,8 +143,9 @@ nav ul li a:hover {
 
 .headning3 {
     /* padding-left: 80px; */
-    padding-left: 20px;
+    margin-left: 40px;
     padding-top: 15px;
+    font-size: 17px;
 }
 
 .paraning {
@@ -156,7 +157,8 @@ nav ul li a:hover {
 }
 
 .mainbtn {
-    padding-left: 100px;
+    margin-left: 80px;
+    margin-top: 10px;
     /* padding-left: 125px; */
     padding-right: 0px;
     padding-top: 15px;
@@ -172,6 +174,7 @@ nav ul li a:hover {
     font-weight: bold;
     background-color: crimson;
     border: 4px solid crimson;
+    padding: 1px;
     /* border-radius: 15px; */
     border-radius: 12px;
 }
@@ -183,6 +186,7 @@ nav ul li a:hover {
     font-weight: bold;
     background-color: crimson;
     border: 4px solid crimson;
+    padding: 1px;
     /* border-radius: 15px; */
     border-radius: 12px;
 }
@@ -251,7 +255,7 @@ nav ul li a:hover {
 
 
 .firsttwo {
-    padding-left: 40px;
+    margin-left: 53px;
 }
 
 
@@ -338,11 +342,12 @@ nav ul li a:hover {
 .viewbtn {
     /* margin-top: 100px; */
     /* margin-left: 880px; */
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     background-color: rgb(255, 25, 71);
     border: 4px solid rgb(255, 25, 71);
-    border-radius: 15px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 
@@ -456,11 +461,11 @@ footer {
 }
 
 .secondtwo {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .thirdtwo {
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 .vcsbtn{
