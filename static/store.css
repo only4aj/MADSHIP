@@ -380,6 +380,7 @@ footer {
 
 .storegold {
     color: rgb(221, 173, 53);
+    font-style: normal;
 }
 
 
@@ -387,6 +388,7 @@ footer {
     /* padding-left: 55px; */
     color: grey;
     margin-top: 20px;
+    font-style: italic;
 }
 
 /* Extra CSS */
