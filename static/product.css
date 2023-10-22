@@ -48,6 +48,70 @@ nav ul li a {
     transition: 0.5s all;
 }
 
+
+h1 {
+    color: rgb(184, 179, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 20px;
+    padding-right: 70px;
+    font-size: 30px;
+}
+
+#login {
+
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    /* border: 4px solid rgb(199, 174, 30); */
+    /* border-radius: 15px; */
+    border: 3px solid rgb(199, 174, 30);
+    border-radius: 13px;
+
+}
+
+
+#login a {
+    text-decoration: none;
+    color: rgb(199, 174, 30);
+    padding: 4px 7px;
+}
+
+#login:hover {
+    background-color: rgb(212, 185, 33);
+    /* border-radius: 15px; */
+
+}
+
+#login a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#cartimg {
+    width: 50px;
+    height: 50px;
+    padding-right: 45px;
+
+}
+
+nav ul li a:hover {
+    color: rgb(226, 199, 42);
+    transition: ease-in;
+}
+
+#cartimg {
+    width: 50px;
+    height: 50px;
+    padding-right: 45px;
+
+}
+
+nav ul li a:hover {
+    color: rgb(226, 199, 42);
+    transition: ease-in;
+}
+
 .df {
     display: flex;
     justify-content: center;

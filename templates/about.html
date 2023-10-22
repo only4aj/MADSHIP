@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Satisfy&display=swap" rel="stylesheet">
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'aboutess.css' %}">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
             <li><a href="/about">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <!-- <button id="login"><a href="/login">Sign In</a></button> -->
+        <button type="submit" id="login" class="login"><a href="/register">Sign In</a></button>
         <a href="/cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
     </nav>
 
