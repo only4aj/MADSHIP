@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styless.css' %}">
+    <link rel="stylesheet" href="{% static 'stylss.css' %}">
 </head>
 
 <body>
@@ -182,7 +182,65 @@
 
     </div>
 
-    <div class="freqask"></div>
+    <div class="freqask">
+        <h1 class="title">FAQs</h1>
+        <div class="faq">
+            <div class="question">
+                <h3>How long does shipping take ?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Shipping typically takes 2-3 working days, although delivery times may vary depending on your location. Rest assured, we make every effort to get your order to you as quickly as possible.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>Is My Personal Information Secure ?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>We take data security seriously. Your personal information is encrypted and protected using industry-standard security measures.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>What payment methods are accepted ?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>We accept major credit cards, debit cards, digital wallets like PayPal, and even offer the convenience of cash on delivery for eligible orders.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>How Can I Contact Customer Support ?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>You can find detailed contact information, including our email address and phone number, on our Contact Page. We're here to assist you with any questions or concerns.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>Can I cancel my order anytime ?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Orders can be canceled within 24 hours of purchase by contacting our customer support. We understand that circumstances may change, and we're here to assist you with any cancellation requests during this timeframe.</p>
+            </div>
+        </div>
+    </div>
+
 
     <footer>
         <div class="socialmedia">
@@ -202,6 +260,6 @@
             <p class="rights">All Rights Reserved</p>
         </div>
     </footer>
+    <script src="{% static 'app.js' %}"></script>
 </body>
-
 </html>

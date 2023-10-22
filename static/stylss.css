@@ -146,6 +146,7 @@ nav ul li a:hover {
     margin-left: 40px;
     padding-top: 15px;
     font-size: 17px;
+    color: rgb(73, 73, 73);
 }
 
 .paraning {
@@ -545,9 +546,10 @@ footer {
 }
 
 .peepname{
-    margin-left: 80px;
+    margin-left:75px;
     font-weight: bold;
     color: rgb(135, 135, 135);
+    font-family: sans-serif;
 }
 
 .testyquote{
@@ -568,4 +570,69 @@ footer {
     box-shadow: 0px 0px 30px grey;
     margin-bottom: 20px;
     margin-top: 100px;
+}
+
+.title{
+    font-family: "Quicksand";
+    color: #333333;
+    font-size: 70px;
+    margin-top: 50px;
+}
+
+.freqask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq{
+    max-width: 700px;
+    margin-top: 50px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid grey;
+    cursor: pointer;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question h3{
+    font-size: 25px;
+}
+
+/* .answer{
+    max-height: 0;
+    overflow: hidden;
+} */
+
+.answer p{
+    padding-top: 10px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* .faq .active .answer{
+    max-height: 300px;
+} */
+
+
+/* .answer {
+    display: none;
+}
+
+.faq.active .answer {
+    display: block;
+} */
+
+.faq .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq.active .answer {
+    max-height: 500px; /* Adjust the max height to your preference */
 }
