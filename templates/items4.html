@@ -22,7 +22,7 @@
                 <li><a href="{% url 'contact' %}">Contact Us</a></li>
             </ul>
             <button type="submit" id="login" class="login"><a href={% url "login" %}>Sign In</a></button>
-            <a href="cart"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+            <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
         </nav>
     </header>
     <main>
