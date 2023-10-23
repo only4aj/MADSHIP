@@ -222,15 +222,47 @@ nav ul li a:hover {
 .box-one {
     width: 1180px;
     height: 50px;
-    background-color: #decc6d;
+    background-color: rgb(233, 233, 233);
     margin-top: 5px;
     font-size: 30px;
     align-items: flex-start;
     border-radius: 12px;
 }
 
-.box-one p {
-    margin-left: 10px;
+.womenfash{
+    color: rgb(83, 83, 83);
+    margin-left: 350px;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    word-spacing: 5px;
+}
+
+.menfash{
+    color: rgb(83, 83, 83);
+    margin-left: 400px;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    word-spacing: 5px;
+}
+
+.shoes{
+    color: rgb(83, 83, 83);
+    margin-left: 510px;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    word-spacing: 5px;
+}
+
+.electronics{
+    color: rgb(83, 83, 83);
+    margin-left: 430px;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    word-spacing: 5px;
 }
 
 .box-two {
@@ -267,6 +299,7 @@ nav ul li a:hover {
 
 .box a img {
     height: 220px;
+    cursor: pointer;
 }
 
 /* .box a img:hover{
