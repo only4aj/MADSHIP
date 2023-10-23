@@ -176,6 +176,10 @@ nav ul li a:hover {
 
 .visionhead {
     width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-style: italic;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,15 +214,38 @@ nav ul li a:hover {
 }
 
 .teamhead {
+    margin-left: 100px;
     color: rgb(102, 102, 102);
-    margin: 20px 0px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    /* font-style: italic; */
 }
 
+.teamsep {
+    margin-left: 435px;
+    width: 400px;
+    margin-bottom: 50px;
+    border: 2px solid rgb(214, 210, 210);
+}
 .personholder {
     width: 980px;
     height: 300px;
     background-color: rgb(231, 231, 231);
     border-radius: 30px;
+    cursor: pointer;
+}
+
+.skills{
+    margin-top: 20px;
+}
+
+.role{
+    margin-bottom: 10px;
+}
+
+.favquote{
+    margin-top: 30px;
 }
 
 .name h2 {
@@ -304,8 +331,11 @@ footer {
 } */
 
 .img-size {
+    margin-top: 4px;
     width: 290px;
     height: 300px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .remaincontent {
@@ -319,8 +349,12 @@ footer {
     flex-direction: column;
 }
 
-.imgme{
-    width: 260px;
+.imgbr{
+    margin-top: 4px;
+    width: 290px;
+    height: 300px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .line {
