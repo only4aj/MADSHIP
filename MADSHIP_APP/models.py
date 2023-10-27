@@ -18,7 +18,6 @@ class ProductItem(models.Model):
     act_price = models.IntegerField()
     offer = models.IntegerField()
     item_id = models.IntegerField()
-    details = models.CharField(max_length=1000, default="Default Value")
     description = models.CharField(max_length=2000)
     image = models.ImageField(upload_to='images',width_field="width")
     width = models.IntegerField(default=0)
