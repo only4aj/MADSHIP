@@ -24,7 +24,7 @@
             <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
         </nav>
         <div class="container df">
-            <div class="image df"><img src="{{data.image.url}}" alt=""></div>
+            <div class="image df"><img src="{{data.image.url}}" alt="{{data.title}}" width="{{data.width}}px"></div>
             <div>
                 <div class="data df">
                     <div class="comn brd">{{data.brand}}</div>
@@ -39,7 +39,18 @@
                     </div>
                     <div class="comn dtl df ">
                         <span>Details</span>
-                        <p>{{data.details}}</p>
+                        <!-- <p>{{data.details}}</p> -->
+                        {%if data.item_id > 1500 and data.item_id < 1599 %}
+                        <li>Model : {{data.d1}}</li>
+                        <li>RAM : {{data.d2}}GB</li>
+                        <li>Storage : {{data.d3}}GB</li>
+                        <li>Processor : {{data.d4}}</li>
+                        {% else %}
+                        <li>Color : {{data.d1}}</li>
+                        <li>Size : {{data.d2}}</li>
+                        <li>Type : {{data.d3}}</li>
+                        <li>Ocasion : {{data.d4}}</li>
+                        {%endif%}
                     </div>
                     <div class="comn dscrn df dtl">
                         <span>Description</span>

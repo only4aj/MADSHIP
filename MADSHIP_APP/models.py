@@ -21,6 +21,10 @@ class ProductItem(models.Model):
     description = models.CharField(max_length=2000)
     image = models.ImageField(upload_to='images',width_field="width")
     width = models.IntegerField(default=0)
+    d1 = models.CharField(max_length=50,default=0)
+    d2 = models.CharField(max_length=50,default=0)
+    d3 = models.CharField(max_length=50,default=0)
+    d4 = models.CharField(max_length=50,default=0)
 
     def __str__(self) -> str:
         return self.title

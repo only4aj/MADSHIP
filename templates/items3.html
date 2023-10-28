@@ -30,19 +30,23 @@
             <div class="row df">
                 <div class="box-one bg-box df">
                     <div class="boxOne bg-box df">
-                        <p class="shoes">SHOES</p>
+                        <p class="shoes electronics">SHOES</p>
                     </div>
                 </div>
                 <div class="box-two bg-box df" id="setText">
                     {%for i in data %}
-                        {% if i.item_id > 1600 and i.item_id < 1699 %}
+                        {% if i.item_id >= 1600 and i.item_id < 1699 %}
                         <div class="box df">
                             <form action="{% url 'product'%}" method="post" class="box df">
                                 {% csrf_token %}
                                 <button type="submit" style="border: none;">
                                     <a>
                                         <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
+                                        {%if i.item_id == 1606%}
+                                        <img src="{{i.image.url}}" alt="Shoes" width="230px" height="210px">
+                                        {%else%}
                                         <img src="{{i.image.url}}" alt="Shoes">
+                                        {%endif%}
                                     </a>
                                 </button>
                             <div class="box-data df fnt-sz">
