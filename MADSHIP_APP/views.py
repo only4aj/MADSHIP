@@ -75,3 +75,6 @@ def product(request):
         if str(i.item_id) == itemId:
             return render(request,'product.html',{'data':i})
     return render(request,'product.html',{'data':"error"})
+
+
+
