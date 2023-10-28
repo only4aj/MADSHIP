@@ -45,11 +45,16 @@
                         <li>RAM : {{data.d2}}GB</li>
                         <li>Storage : {{data.d3}}GB</li>
                         <li>Processor : {{data.d4}}</li>
+                        {%elif data.item_id >= 1600 and data.item_id < 1699 %}
+                        <li>Color : {{data.d1}}</li>
+                        <li>Size : {{data.d2}}</li>
+                        <li>Type : {{data.d3}}</li>
+                        <li>Material : {{data.d4}}</li>
                         {% else %}
                         <li>Color : {{data.d1}}</li>
                         <li>Size : {{data.d2}}</li>
                         <li>Type : {{data.d3}}</li>
-                        <li>Ocasion : {{data.d4}}</li>
+                        <li>Ocassion : {{data.d4}}</li>
                         {%endif%}
                     </div>
                     <div class="comn dscrn df dtl">
