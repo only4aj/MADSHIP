@@ -136,7 +136,7 @@ main {
 }
 
 .image {
-    width: 430px;
+    width: 400px;
     height: 550px;
     box-shadow: 0 0 10px rgb(201, 201, 201);
     border-radius: 12px;
@@ -155,7 +155,7 @@ main {
 }
 
 .image img {
-    width: 430px;
+    /* width: 430px; */
     height: 550px;
     border-radius: 12px;
 }

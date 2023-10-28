@@ -247,14 +247,6 @@ nav ul li a:hover {
     word-spacing: 5px;
 }
 
-.shoes{
-    color: rgb(83, 83, 83);
-    margin-left: 510px;
-    font-size: 50px;
-    font-weight: bold;
-    font-style: italic;
-    word-spacing: 5px;
-}
 
 .electronics{
     color: rgb(83, 83, 83);
@@ -265,6 +257,9 @@ nav ul li a:hover {
     word-spacing: 5px;
 }
 
+.shoes{
+    margin-left: 510px;
+}
 .box-two {
     width: 1180px;
     box-shadow: 0 0 5px rgb(189, 171, 67);
