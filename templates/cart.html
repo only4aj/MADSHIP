@@ -9,6 +9,48 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'carts.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .df {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .heading {
+            width: 1200px;
+            height: 50px;
+            /* background: green; */
+            box-shadow: 0 0 13px rgb(113, 112, 112);
+            margin-top: 10px;
+            border-radius: 12px;
+        }
+
+        .heading p {
+            font-size: 35px;
+            color: gray;
+        }
+
+        .box {
+            width: 1000px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .image img {
+            width: 75px;
+            height: 85px;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,6 +67,33 @@
             <!-- <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a> -->
         </nav>
     </header>
+    <main>
+        <div class="container df">
+            <div class="heading df">
+                <p class="text df">My Card</p>
+            </div>
+            <div class="box df" id="box">
+                <div class="image df" id="image"><img src="/images/g10.png" alt=""></div>
+                <div class="title df" id="title">Self Design, Woven, Embroidered Banarasi Cotton Jute, Jacquard Saree (Purple)</div>
+                <div class="qty df" id="qty"></div>
+                <div class="amount df">
+                    <p id="amount"></p>
+                </div>
+                <div class="buy df" id="buy"></div>
+            </div>
+        </div>
+    </main>
 </body>
+<script>
+    let img = document.getElementById('image')
+    let ttl = document.getElementById('title')
+    let qty = document.getElementById('qty')
+    let price = document.getElementById('price')
+    let buy = document.getElementById('buy')
+
+    for (let i = 0; i < localStorage.length; i++) {
+        console.log(localStorage.key(i))
+    }
+</script>
 
 </html>
