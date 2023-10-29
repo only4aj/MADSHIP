@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            <div id="n"></div>
+            <div id="p" class="p"></div>
+            <div id="i"></div>
+        </div>
+    </div>
+</body>
+<script>
+    // window.location.reload();
+    let con = document.getElementById('container')
+    // let p = document.getElementById('p')
+    let n = document.getElementById('n')
+    let p = document.querySelector('.p')
+    let i = document.getElementById('i')
+    let data = localStorage
+    // console.log(Array.from(data.key))
+    for(let j = 0;j<localStorage.length;j++){
+        console.log(localStorage.key(j))
+        b = document.createElement("div")
+        b.className = "box"+localStorage.key(j)
+        b.innerHTML = `<div id="n${localStorage.key(j)}"></div>
+        <div id="p${localStorage.key(j)}" class="p"></div>
+        <div id="i${localStorage.key(j)}"></div>`;
+        con.append(b)
+        n = document.getElementById('n'+localStorage.key(j))
+        i = document.getElementById('p'+localStorage.key(j))
+        p = document.getElementById('i'+localStorage.key(j))
+        n.innerHTML = JSON.parse(localStorage.getItem(localStorage.key(j))).name;
+        p.innerHTML = JSON.parse(localStorage.getItem(localStorage.key(j))).price;
+        i.innerHTML = `<img src="${JSON.parse(localStorage.getItem(localStorage.key(j))).image}" alt="" width="200px">`;
+        // console.log(JSON.parse(localStorage.getItem(localStorage.key(j))).name)
+        // console.log(JSON.parse(localStorage.getItem(localStorage.key(j))).price)
+    }
+    if(document.getElementsByClassName("box").length > 0){
+        console.log("box")
+    }else{
+        console.log("unbox")
+    }
+</script>
+</html>

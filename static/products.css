@@ -1,3 +1,4 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Ubuntu&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -151,7 +152,7 @@ main {
     justify-content: flex-start;
     /* gap: 5px; */
     padding-top: 5px;
-    min-height: 500px;
+    min-height: 550px;
 }
 
 .image img {
@@ -166,7 +167,8 @@ main {
 
 .brd {
     color: gray;
-    font-size: 23px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .ttl {
@@ -191,6 +193,9 @@ main {
 .dis {
     font-size: 25px;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 .act {
@@ -213,6 +218,17 @@ main {
 .dtl span {
     font-size: 25px;
     font-weight: bold;
+    padding-bottom: 5px;
+}
+.dtl p{
+    width: 650px;
+    height: 210px;
+    padding: 0 20px;
+    color: #4e4d4d;
+    padding-top: 5px;
+    line-height: 25px;
+    font-family: 'Open Sans', sans-serif;
+/* font-family: 'Ubuntu', sans-serif; */
 }
 
 form {

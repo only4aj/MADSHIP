@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="name"><p id="name">Bratadipta Mondal</p></div>
+        <div class="price" ><p id="price">1100</p></div>
+        <div class="image" id="image"><img src="/a.jpg" alt="" id="imgg" width="200px" onclick="setdata()"></div>
+        <button onclick="setdata()">add data</button>
+    </div>
+</body>
+<script>
+function setdata(){
+    let rnd = Math.random()
+    let id = rnd
+    let n = document.getElementById('name').textContent
+    let p = document.getElementById("price").textContent
+    let i = document.getElementById("imgg").src
+    data = {
+        'name':n,
+        'price':p,
+        'image':i
+    }
+    localStorage.setItem(id,JSON.stringify(data))
+}
+</script>
+</html>

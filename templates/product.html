@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'products.css'%}">
-    <link rel="icon" href="{% static "MADICON.png" %}" type="image/png">
+    <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
     <title>Document</title>
 </head>
 
@@ -16,23 +16,26 @@
             <h1>MAD<span id="colship">SHIP</span></h1>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="{% url "store" %}">Store</a></li>
-                <li><a href="{% url "about" %}">About Us</a></li>
+                <li><a href="{% url 'store' %}">Store</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
                 <li><a href="{% url 'contact' %}">Contact Us</a></li>
             </ul>
-            <button type="submit" id="login" class="login"><a href={% url "login" %}>Sign In</a></button>
-            <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+            <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
+            <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
         </nav>
         <div class="container df">
-            <div class="image df"><img src="{{data.image.url}}" alt="{{data.title}}" width="{{data.width}}px"></div>
+            <div class="image df"><img src="{{data.image.url}}" alt="{{data.title}}" width="{{data.width}}px" id="imgg">
+            </div>
             <div>
                 <div class="data df">
+                    <div id="id" style="display: none;">{{data.item_id}}</div>
                     <div class="comn brd">{{data.brand}}</div>
-                    <div class="comn ttl ">{{data.title}}</div>
+                    <div class="comn ttl " id="ttl">{{data.title}}</div>
                     <div class="comn pricespl df">
                         <span>Special Price</span>
                         <div class="spl price df">
-                            <div class="dis">₹{{data.dis_price}}</div>
+                            <div class="dis">₹<p id="price">{{data.dis_price}}</p>
+                            </div>
                             <div class="act">₹{{data.act_price}}</div>
                             <div class="ofr">{{data.offer}}%</div>
                         </div>
@@ -40,22 +43,20 @@
                     <div class="comn dtl df ">
                         <span>Details</span>
                         <!-- <p>{{data.details}}</p> -->
-                        {%if data.item_id > 1500 and data.item_id < 1599 %}
-                        <li>Model : {{data.d1}}</li>
-                        <li>RAM : {{data.d2}}GB</li>
-                        <li>Storage : {{data.d3}}GB</li>
-                        <li>Processor : {{data.d4}}</li>
-                        {%elif data.item_id >= 1600 and data.item_id < 1699 %}
-                        <li>Color : {{data.d1}}</li>
-                        <li>Size : {{data.d2}}</li>
-                        <li>Type : {{data.d3}}</li>
-                        <li>Material : {{data.d4}}</li>
-                        {% else %}
-                        <li>Color : {{data.d1}}</li>
-                        <li>Size : {{data.d2}}</li>
-                        <li>Type : {{data.d3}}</li>
-                        <li>Ocassion : {{data.d4}}</li>
-                        {%endif%}
+                        {%if data.item_id > 1500 and data.item_id < 1599 %} <li>Model : {{data.d1}}</li>
+                            <li>RAM : {{data.d2}}GB</li>
+                            <li>Storage : {{data.d3}}GB</li>
+                            <li>Processor : {{data.d4}}</li>
+                            {%elif data.item_id >= 1600 and data.item_id < 1699 %} <li>Color : {{data.d1}}</li>
+                                <li>Size : {{data.d2}}</li>
+                                <li>Type : {{data.d3}}</li>
+                                <li>Material : {{data.d4}}</li>
+                                {% else %}
+                                <li>Color : {{data.d1}}</li>
+                                <li>Size : {{data.d2}}</li>
+                                <li>Type : {{data.d3}}</li>
+                                <li>Ocassion : {{data.d4}}</li>
+                                {%endif%}
                     </div>
                     <div class="comn dscrn df dtl">
                         <span>Description</span>
@@ -63,13 +64,46 @@
                     </div>
                 </div>
                 <div class="btnbox">
-                    <form action="" class="df">
-                        <button type="submit" class="addtcrd">Add to Cart</button>
+                    <form class="df">
+                        <button type="button" class="addtcrd" onclick="setdata()">Add to Cart</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
 </body>
+<script>
+    let qty = 1;
+    function setdata() {
+        let title = document.getElementById("ttl").textContent
+        let image = document.getElementById("imgg").src
+        let price = document.getElementById('price').textContent
+        let id = document.getElementById('id').textContent
+
+        for(let i=0;i<localStorage.length;i++){
+            // console.log(typeof(localStorage.key(i)))
+            if(localStorage.key(i) == id){
+                qty = Number(JSON.parse(localStorage.getItem(localStorage.key(i))).quantity) + 1
+                localStorage.removeItem(id)
+                data = {
+                    'title': title,
+                    "quantity": qty,
+                    "image": image,
+                    "price": price,
+                }
+                data = JSON.stringify(data)
+                localStorage.setItem(id,data)
+            }
+        }
+        data = {
+            'title': title,
+            "quantity": qty,
+            "image": image,
+            "price": price,
+        }
+        data = JSON.stringify(data)
+        localStorage.setItem(id, data)
+    }
+</script>
 
 </html>
