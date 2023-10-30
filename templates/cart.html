@@ -36,19 +36,168 @@
         }
 
         .heading p {
-            font-size: 35px;
-            color: gray;
+            font-size: 40px;
+            color: #555353;
+        }
+
+        .mainbox {
+            width: 1200px;
+            align-self: flex-start;
+            gap: 25px;
+        }
+
+        .b {
+            width: 850px;
+        }
+
+        .boxes {
+            align-self: flex-start;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .box {
-            width: 1000px;
+            /* width: 1200px;
+            gap: 35px; */
+            width: 850px;
+            gap: 10px;
             height: 100px;
-            background-color: red;
+            font-size: 24px;
+            box-shadow: 0 0 12px gray;
+            border-radius: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding-left: 10px;
+            /* align-self: flex-start; */
+            /* margin-left: 15px; */
+        }
+
+        .image {
+            width: 75px;
         }
 
         .image img {
-            width: 75px;
+            /* width: 75px; */
             height: 85px;
+        }
+
+        .title {
+            flex-wrap: wrap;
+            width: 400px;
+            font-size: 20px;
+            justify-content: flex-start;
+        }
+
+        .qty {
+            width: 145px;
+            box-shadow: 0 0 10px gray;
+            padding: 5px;
+            font-size: 21px;
+            border-radius: 7px;
+        }
+
+        .qty p {
+            padding: 0px 5px;
+        }
+
+        .arrow {
+            width: 20px;
+            height: 30px;
+            flex-direction: column;
+        }
+
+        .arrow img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .arrow img:hover {
+            cursor: pointer;
+        }
+
+        .remove button {
+            border: none;
+            padding: 5px;
+            font-size: 20px;
+            color: white;
+            background: red;
+            border-radius: 5px;
+        }
+
+        .remove button:hover {
+            cursor: pointer;
+            box-shadow: 0 0 3px white, 0 0 4px gray, 0 0 5px red;
+        }
+
+        .buy {
+            width: 280px;
+            height: 340px;
+            box-shadow: 0 0 10px gray;
+            border-radius: 10px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cmm {
+            width: 90%;
+            height: 35px;
+            /* background: green; */
+            font-size: 22px;
+            color: rgb(67, 67, 67);
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .prcdtl {
+            justify-content: center;
+            font-weight: 600;
+            font-size: 25px;
+        }
+
+        .plcord button {
+            border: none;
+            background: #e5cf5f;
+            padding: 5px;
+            font-size: 22px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .plcord button:hover {
+            cursor: pointer;
+            box-shadow: 0 0 3px white, 0 0 4px gray, 0 0 5px #f7e692;
+        }
+
+        .ttlprc {
+            gap: 5px;
+        }
+
+        .ttlprc div{
+            width: 80px;
+        }
+
+        .itmqty {
+            gap: 100px;
+        }
+
+        .dscntprc {
+            gap: 90px;
+        }
+
+        .dscntprc div {
+            color: rgb(4, 155, 4);
+        }
+
+        .dlvrycrg {
+            gap: 50px;
+        }
+
+        .ttlprcdis {
+            gap: 60px;
+        }
+        .amount{
+            width: 85px;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -63,8 +212,8 @@
                 <li><a href="{% url 'about' %}">About Us</a></li>
                 <li><a href="{% url 'contact' %}">Contact Us</a></li>
             </ul>
-            <!-- <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button> -->
-            <!-- <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a> -->
+            <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
+            <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
         </nav>
     </header>
     <main>
@@ -72,14 +221,43 @@
             <div class="heading df">
                 <p class="text df">My Card</p>
             </div>
-            <div class="box df" id="box">
-                <div class="image df" id="image"><img src="/images/g10.png" alt=""></div>
-                <div class="title df" id="title">Self Design, Woven, Embroidered Banarasi Cotton Jute, Jacquard Saree (Purple)</div>
-                <div class="qty df" id="qty"></div>
-                <div class="amount df">
-                    <p id="amount"></p>
+            <div class="mainbox df">
+                <div id="listbox" class="df boxes">
+                    <div class="b"></div>
+
+                    <!-- <div class="box df" id="box">
+                        <div class="image df" id="image"><img src="/images/g10.png" alt=""></div>
+                        <div class="title df" id="title">Self Design, Woven, Embroidered Banarasi ....</div>
+                        <div class="qty df">Quantity : <p id="qty">3</p>
+                            <div class="arrow df">
+                                <img src="{%static 'up.png'%}" alt="">
+                                <img src="{%static 'down.png'%}" alt="">
+                            </div>
+                        </div>
+                        <div class="amount df">₹
+                            <p id="amount">3435</p>
+                        </div>
+                        <div class="remove df" id="remove"><button onclick="removeItem()">Remove</button></div>
+                    </div> -->
                 </div>
-                <div class="buy df" id="buy"></div>
+                <div class="buy df" id="buy">
+                    <div class="prcdtl cmm df">Price Details</div>
+                    <div class="ttlprc cmm df">Total Item Price : <div class="df">₹<p id="ttlprc">12000</p>
+                        </div>
+                    </div>
+                    <div class="itmqty cmm df">Item Quantity :
+                        <p id="itmqty">5</p>
+                    </div>
+                    <div class="dscntprc cmm df">Discount : <div class="df">₹-<p id="dscntprc">1200</p>
+                        </div>
+                    </div>
+                    <div class="dlvrycrg cmm df">Delivery Charge : <div class="df"> ₹50</div>
+                    </div>
+                    <div class="ttlprcdis cmm df">Total Amount : <div class="df">₹<p id="ttlprcdis">5467</p>
+                        </div>
+                    </div>
+                    <div class="plcord cmm df"><button id="plcord">Place Order</button></div>
+                </div>
             </div>
         </div>
     </main>
@@ -90,9 +268,55 @@
     let qty = document.getElementById('qty')
     let price = document.getElementById('price')
     let buy = document.getElementById('buy')
+    let listbox = document.getElementById('listbox')
+
+    let numitem = 0;
+    let actualprice = 0,discntprice = 0;
 
     for (let i = 0; i < localStorage.length; i++) {
         console.log(localStorage.key(i))
+        let newdiv = document.createElement('div')
+        newdiv.className = 'box df';
+        newdiv.id = "" + localStorage.key(i) + ""
+
+        let imgg = JSON.parse(localStorage.getItem(localStorage.key(i))).image;
+        let titl = JSON.parse(localStorage.getItem(localStorage.key(i))).title;
+        let qtyitm = JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
+        let price = JSON.parse(localStorage.getItem(localStorage.key(i))).price;
+        let act = JSON.parse(localStorage.getItem(localStorage.key(i))).actprc;
+        actualprice += act*qty;
+        discntprice += price*qty
+        newdiv.innerHTML = `
+            <div class="image df" id="image"><img src="${imgg}" alt=""></div>
+                        <div class="title df" id="title">${titl}</div>
+                        <div class="qty df">Quantity : <p id="qty">${qtyitm}</p>
+                            <div class="arrow df">
+                                <img src="{%static 'up.png'%}" alt="">
+                                <img src="{%static 'down.png'%}" alt="">
+                            </div>
+                        </div>
+                        <div class="amount df">₹
+                            <p id="amount">${price * qtyitm}</p>
+                            </div>
+                            <div class="remove df" id="remove"><button onclick="deleteitem(${localStorage.key(i)})">Remove</button></div>
+                            `;
+        listbox.append(newdiv)
+        numitem++;
+        // let disprice = document.getElementById("dscntprc")
+        // if()
+    }
+    let ttlprice = document.getElementById("ttlprc")
+    let itemqty = document.getElementById("itmqty")
+    let disprice = document.getElementById("dscntprc")
+    let ttldis = document.getElementById("ttlprcdis")
+    itemqty.innerText = numitem
+    ttlprice.innerText = discntprice
+    disprice.innerText = actualprice-discntprice
+
+    function deleteitem(itemid) {
+        localStorage.removeItem(itemid)
+        let itembox = document.getElementById(""+itemid)
+        itembox.remove();
     }
 </script>
 

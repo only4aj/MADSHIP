@@ -36,7 +36,8 @@
                         <div class="spl price df">
                             <div class="dis">₹<p id="price">{{data.dis_price}}</p>
                             </div>
-                            <div class="act">₹{{data.act_price}}</div>
+                            <div class="act">₹<p id="act">{{data.act_price}}</p>
+                            </div>
                             <div class="ofr">{{data.offer}}%</div>
                         </div>
                     </div>
@@ -78,21 +79,23 @@
         let title = document.getElementById("ttl").textContent
         let image = document.getElementById("imgg").src
         let price = Number(document.getElementById('price').textContent)
+        let actprc = Number(document.getElementById('act').textContent)
         let id = document.getElementById('id').textContent
 
-        for(let i=0;i<localStorage.length;i++){
+        for (let i = 0; i < localStorage.length; i++) {
             // console.log(typeof(localStorage.key(i)))
-            if(localStorage.key(i) == id){
-                qty = Number(JSON.parse(localStorage.getItem(localStorage.key(i))).quantity) + 1 
+            if (localStorage.key(i) == id) {
+                qty = Number(JSON.parse(localStorage.getItem(localStorage.key(i))).quantity) + 1
                 localStorage.removeItem(id)
                 data = {
                     'title': title,
                     "quantity": qty,
                     "image": image,
-                    "price": price
+                    "price": price,
+                    "actprc": actprc
                 }
                 data = JSON.stringify(data)
-                localStorage.setItem(id,data)
+                localStorage.setItem(id, data)
                 // alertify.alert("Add to Card")
             }
         }
@@ -101,6 +104,7 @@
             "quantity": qty,
             "image": image,
             "price": price,
+            "actprc": actprc
         }
         data = JSON.stringify(data)
         localStorage.setItem(id, data)
