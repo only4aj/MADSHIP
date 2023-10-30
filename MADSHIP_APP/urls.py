@@ -21,6 +21,7 @@ urlpatterns = [
     path("contact/", views.contact, name = "contact"),
     path("items4/", views.items4, name = "items4"),
     path("product/", views.product, name = "product"),
+    path("checkout/", views.checkout, name = "checkout"),
 ]
 
 if settings.DEBUG:

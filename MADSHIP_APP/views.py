@@ -77,4 +77,5 @@ def product(request):
     return render(request,'product.html',{'data':"error"})
 
 
-
+def checkout(request):
+    return render(request,'checkout.html')
