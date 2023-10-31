@@ -131,11 +131,13 @@
 
         .buy {
             width: 280px;
-            height: 340px;
+            height: 320px;
             box-shadow: 0 0 10px gray;
             border-radius: 10px;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
+            align-self: flex-start;
+            margin-top: 15px;
         }
 
         .cmm {
@@ -144,7 +146,7 @@
             /* background: green; */
             font-size: 22px;
             color: rgb(67, 67, 67);
-            justify-content: flex-start;
+            justify-content: space-between;
             gap: 5px;
         }
 
@@ -172,8 +174,9 @@
             gap: 5px;
         }
 
-        .ttlprc div{
+        .ttlprc div {
             width: 80px;
+            justify-content: flex-end;
         }
 
         .itmqty {
@@ -192,18 +195,23 @@
             gap: 50px;
         }
 
-        .ttlprcdis {
-            gap: 60px;
-        }
-        .amount{
+        .amount {
             width: 85px;
             font-size: 20px;
         }
 
-        #plcord a{
+        #plcord a {
             text-decoration: none;
             color: rgb(78, 78, 78);
             font-weight: bold;
+        }
+
+        .mtcrt {
+            font-size: 80px;
+            color: #b9b9b9;
+            position: absolute;
+            top: 50%;
+            left: 35%;
         }
     </style>
 </head>
@@ -225,44 +233,13 @@
     <main>
         <div class="container df">
             <div class="heading df">
-                <p class="text df">My Card</p>
+                <p class="text df">My Cart</p>
             </div>
             <div class="mainbox df">
                 <div id="listbox" class="df boxes">
                     <div class="b"></div>
-
-                    <!-- <div class="box df" id="box">
-                        <div class="image df" id="image"><img src="/images/g10.png" alt=""></div>
-                        <div class="title df" id="title">Self Design, Woven, Embroidered Banarasi ....</div>
-                        <div class="qty df">Quantity : <p id="qty">3</p>
-                            <div class="arrow df">
-                                <img src="{%static 'up.png'%}" alt="">
-                                <img src="{%static 'down.png'%}" alt="">
-                            </div>
-                        </div>
-                        <div class="amount df">₹
-                            <p id="amount">3435</p>
-                        </div>
-                        <div class="remove df" id="remove"><button onclick="removeItem()">Remove</button></div>
-                    </div> -->
                 </div>
-                <div class="buy df" id="buy">
-                    <div class="prcdtl cmm df">Price Details</div>
-                    <div class="ttlprc cmm df">Total Item Price : <div class="df">₹<p id="ttlprc">12000</p>
-                        </div>
-                    </div>
-                    <div class="itmqty cmm df">Item Quantity :
-                        <p id="itmqty">5</p>
-                    </div>
-                    <div class="dscntprc cmm df">Discount : <div class="df">₹-<p id="dscntprc">1200</p>
-                        </div>
-                    </div>
-                    <div class="dlvrycrg cmm df">Delivery Charge : <div class="df"> ₹50</div>
-                    </div>
-                    <div class="ttlprcdis cmm df">Total Amount : <div class="df">₹<p id="ttlprcdis">5467</p>
-                        </div>
-                    </div>
-                    <div class="plcord cmm df"><button id="plcord"><a href="{% url "checkout" %}">Checkout</a></button></div>
+                <div class="buybox" id="buybox">
                 </div>
             </div>
         </div>
@@ -276,9 +253,15 @@
     let buy = document.getElementById('buy')
     let listbox = document.getElementById('listbox')
 
-    let numitem = 0;
-    let actualprice = 0,discntprice = 0;
+    let numitem = localStorage.length;
+    let actualprice = 0, discntprice = 0;
 
+    if(numitem == 0){
+        document.getElementById('buybox').innerHTML = `
+        <div class="mtcrt df" id="mtcrt">
+                    Empty Cart !
+                </div>`;
+    }
     for (let i = 0; i < localStorage.length; i++) {
         console.log(localStorage.key(i))
         let newdiv = document.createElement('div')
@@ -288,10 +271,12 @@
         let imgg = JSON.parse(localStorage.getItem(localStorage.key(i))).image;
         let titl = JSON.parse(localStorage.getItem(localStorage.key(i))).title;
         let qtyitm = JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
-        let price = JSON.parse(localStorage.getItem(localStorage.key(i))).price;
+        let pric = JSON.parse(localStorage.getItem(localStorage.key(i))).price;
         let act = JSON.parse(localStorage.getItem(localStorage.key(i))).actprc;
-        actualprice += act*qty;
-        discntprice += price*qty
+
+        actualprice += act * qtyitm;
+        discntprice += pric * qtyitm;
+
         newdiv.innerHTML = `
             <div class="image df" id="image"><img src="${imgg}" alt=""></div>
                         <div class="title df" id="title">${titl}</div>
@@ -302,27 +287,45 @@
                             </div>
                         </div>
                         <div class="amount df">₹
-                            <p id="amount">${price * qtyitm}</p>
+                            <p id="amount">${pric * qtyitm}</p>
                             </div>
                             <div class="remove df" id="remove"><button onclick="deleteitem(${localStorage.key(i)})">Remove</button></div>
                             `;
         listbox.append(newdiv)
-        numitem++;
-        // let disprice = document.getElementById("dscntprc")
-        // if()
+        if (localStorage.length > 0) {
+            document.getElementById("buybox").innerHTML = `
+                                <div class="buy df" id="buy">
+                                <div class="prcdtl cmm df">Price Details</div>
+                                            <div class="itmqty cmm df">Item Quantity :
+                                                <p id="itmqty">0</p>
+                                            </div>
+                                            <div class="dlvrycrg cmm df">Delivery Charge :
+                                                <div class="df"> ₹50</div>
+                                            </div>
+                                            <div class="ttlprcdis cmm df">Total Amount :
+                                                <div class="df">₹<p id="ttlprcdis">0</p>
+                                                </div>
+                                            </div>
+                                            <div class="plcord cmm df"><button id="plcord"><a href="{% url 'checkout' %}">Checkout</a></button>
+                                            </div>
+                                        </div>
+                                `;
+        }
     }
-    let ttlprice = document.getElementById("ttlprc")
-    let itemqty = document.getElementById("itmqty")
-    let disprice = document.getElementById("dscntprc")
-    let ttldis = document.getElementById("ttlprcdis")
-    itemqty.innerText = numitem
-    ttlprice.innerText = discntprice
-    disprice.innerText = actualprice-discntprice
+
+    document.getElementById("itmqty").innerText = numitem;
+    document.getElementById("ttlprcdis").innerText = discntprice + 50;
+
+
+
+
+
 
     function deleteitem(itemid) {
         localStorage.removeItem(itemid)
-        let itembox = document.getElementById(""+itemid)
+        let itembox = document.getElementById("" + itemid)
         itembox.remove();
+        window.location.reload()
     }
 </script>
 
