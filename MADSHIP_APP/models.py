@@ -29,8 +29,13 @@ class ProductItem(models.Model):
     def __str__(self) -> str:
         return self.title
     
-class Cart(models.Model):
-    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    product = models.ForeignKey(ProductItem, on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=False, blank=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+class customerdetail(models.Model):
+    name = models.CharField(max_length=50, blank=True)
+    address = models.CharField(max_length=500)
+    mail = models.EmailField()
+    mobile = models.PositiveBigIntegerField(default=0)
+    pincode = models.PositiveIntegerField(default=0)
+
+    def __str__(self) -> str:
+        return self.name
+

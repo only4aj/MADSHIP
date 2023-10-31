@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from .models import Customer,ProductItem
+from .models import Customer,ProductItem,customerdetail
 # from .models import Customer
 # Create your views here.
 def index(request):
@@ -78,4 +78,14 @@ def product(request):
 
 
 def checkout(request):
+    cstmrname = str(request.POST.get('cstmrname'))
+    cstmremail = str(request.POST.get("cstmremail"))
+    cstmraddress = str(request.POST.get("cstmraddress"))
+    cstmrphone = (str(request.POST.get("cstmrphone")))
+    cstmrnpincode = (str(request.POST.get("cstmrnpincode")))
+
+    if(cstmrname == "" or cstmremail == "" or cstmraddress == "" or cstmrphone == "" or cstmrnpincode == ""):
+        return render(request,'checkout.html')
+    customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=(cstmrphone), pincode=(cstmrnpincode))
+    customerdata.save()
     return render(request,'checkout.html')

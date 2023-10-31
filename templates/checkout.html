@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     {% load static %}
     <link rel="stylesheet" href="{% static 'checkout.css' %}">
-    <link rel="icon" href="{% static "MADICON.png" %}" type="image/png">
+    <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
 <body>
@@ -16,42 +16,43 @@
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="{% url "store" %}">Store</a></li>
-            <li><a href="{% url "about" %}">About Us</a></li>
+            <li><a href="{% url 'store' %}">Store</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <button type="submit" id="login" class="login"><a href={% url "login" %}>Sign In</a></button>
-        <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
+        <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
     </nav>
     <div class="head">
         <h1 class="h1head">Step II: Enter Details And Address</h1>
     </div>
-    <form method="POST" action="">
-        <div class="flexcol">
+    <div class="flexcol">
+        <form action="{% url 'checkout' %}" method="post">
+            {% csrf_token %}
             <div class="flexfields">
                 <label class="fntsz" for="name">Name:</label>
-                <input class="midspc" type="text" name="name" id="name">
+                <input class="midspc" type="text" name="cstmrname" id="cstmrname">
                 <label class="fntsz" for="email">Email ID: </label>
-                <input class="midspc" type="email" name="email" id="email">
+                <input class="midspc" type="email" name="cstmremail" id="cstmremail">
             </div>
             <div class="flexyfield">
                 <label class="fntsz" for="address1">Address: </label>
-                <input class="addr" type="text" name="address" id="address">
+                <input class="addr" type="text" name="cstmraddress" id="cstmraddress">
             </div>
             <div class="flexyfield">
                 <label class="fntsz" for="phone">Mobile: </label>
-                <input class="midspc" type="tel" name="phone" id="phone">
+                <input class="midspc" type="tel" name="cstmrphone" id="cstmrphone">
                 <label class="fntsz" for="state">State: </label>
-                <input class="midspc" type="text" name="state" id="state">
+                <input class="midspc" type="text" name="cstmrstate" id="cstmrstate">
             </div>
             <div class="flexyfield">
                 <label class="fntsz" for="city">City: </label>
-                <input class="midspc" type="text" name="city" id="city">
+                <input class="midspc" type="text" name="cstmrcity" id="cstmrcity">
                 <label class="fntsz" for="pincode">Pincode: </label>
-                <input class="midspc" type="tel" name="pincode" id="pincode">
+                <input class="midspc" type="tel" name="cstmrpincode" id="cstmrpincode">
             </div>
-        </div>
-    </form>
-    <button class="contbtn"><a href="{% url "cart" %}">← Continue Shopping</a></button>
-    <button class="paybtn">Place Order →</button>
+            <button type="submit" class="paybtn">Place Order →</button>
+        </form>
+    </div>
+    <button class="contbtn"><a href="{% url 'cart' %}">← Continue Shopping</a></button>
 </body>
