@@ -152,24 +152,13 @@
 
         .prcdtl {
             justify-content: center;
-            font-weight: 600;
-            font-size: 25px;
+            font-weight: bold;
+            font-size: 35px;
+            position: relative;
+            bottom: 20px;
         }
 
-        .plcord button {
-            border: none;
-            background: #e5cf5f;
-            padding: 5px;
-            font-size: 22px;
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .plcord button:hover {
-            cursor: pointer;
-            box-shadow: 0 0 3px white, 0 0 4px gray, 0 0 5px #f7e692;
-        }
-
+        
         .ttlprc {
             gap: 5px;
         }
@@ -178,7 +167,7 @@
             width: 80px;
             justify-content: flex-end;
         }
-
+        
         .itmqty {
             gap: 100px;
         }
@@ -186,21 +175,44 @@
         .dscntprc {
             gap: 90px;
         }
-
+        
         .dscntprc div {
             color: rgb(4, 155, 4);
         }
-
+        
         .dlvrycrg {
             gap: 50px;
         }
-
+        
         .amount {
             width: 85px;
             font-size: 20px;
         }
+        
+        .plcord {
+            position: relative;
+            top: 20px;
+        }
+
+        .plcord button {
+            height: 40px;
+            border: none;
+            background: #e5cf5f;
+            font-size: 22px;
+            border-radius: 5px;
+        }
+
+        .plcord button:hover {
+            cursor: pointer;
+            box-shadow: 0 0 3px white, 0 0 4px gray, 0 0 5px #f7e692;
+        }
+        #plcord {
+            width: 100%;
+        }
 
         #plcord a {
+            width: 100%;
+            display: inline-block;
             text-decoration: none;
             color: rgb(78, 78, 78);
             font-weight: bold;
@@ -256,7 +268,7 @@
     let numitem = localStorage.length;
     let actualprice = 0, discntprice = 0;
 
-    if(numitem == 0){
+    if (numitem == 0) {
         document.getElementById('buybox').innerHTML = `
         <div class="mtcrt df" id="mtcrt">
                     Empty Cart !
