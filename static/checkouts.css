@@ -207,7 +207,6 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.contbtn a{
-    text-decoration: none;
-    color: rgb(78, 78, 78);
+.contbtn{
+    cursor: pointer;
 }

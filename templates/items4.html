@@ -25,7 +25,7 @@
     </header>
     <main>
         <div class="container">
-            
+
             <div class="row df">
                 <div class="box-one bg-box df">
                     <div class="boxOne bg-box df">
@@ -34,18 +34,17 @@
                 </div>
                 <div class="box-two bg-box df" id="setText">
                     {%for i in data %}
-                        {% if i.item_id > 2000 and i.item_id < 2099 %}
-                        <div class="box df">
-                            <form action="{% url 'product'%}" method="post" class="box df">
-                                {% csrf_token %}
-                                <button type="submit" style="border: none;">
-                                    <a>
-                                        <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
-                                        <img src="{{i.image.url}}" alt="Women Fashion">
-                                    </a>
-                                </button>
+                    {% if i.item_id > 2000 and i.item_id < 2099 %} <div class="box df">
+                        <form action="{% url 'product'%}" method="post" class="box df">
+                            {% csrf_token %}
+                            <button type="submit" style="border: none;">
+                                <a>
+                                    <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
+                                    <img src="{{i.image.url}}" alt="Women Fashion">
+                                </a>
+                            </button>
                             <div class="box-data df fnt-sz">
-                                <p class="brand">{{i.brand}}</p>
+                                <button type="submit" style="border: none;"><p class="brand">{{i.brand}}</p></button>
                                 <p class="title">{{i.title}}</p>
                                 <div class="price df">
                                     <p class="dis-p fnt-sz">₹ {{i.dis_price}}</p>
@@ -53,12 +52,12 @@
                                     <p class="dis fnt-sz">{{i.offer}}% off</p>
                                 </div>
                             </div>
-                            </form>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
+                        </form>
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
+        </div>
         </div>
     </main>
     <footer>
@@ -66,4 +65,5 @@
     </footer>
 </body>
 <script src="{% static 'javascript.js' %}"></script>
+
 </html>

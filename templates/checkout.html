@@ -54,10 +54,15 @@
             <button type="submit" class="paybtn">Place Order →</button>
         </form>
     </div>
-    <button class="contbtn"><a href="{% url 'cart' %}">← Continue Shopping</a></button>
+    <!-- <button class="contbtn" onclick="forward()"><a href="{% url 'cart' %}">← Continue Shopping</a></button> -->
+    <button class="contbtn" onclick="forward()">← Continue Shopping</button>
 </body>
 <script>
     // window.history.replaceState()
     // window.history.back()
+    function forward(){
+        console.log("object")
+        window.history.back()
+    }
 </script>
 </html>
