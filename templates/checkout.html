@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="greycon">
+    <!-- <nav class="greycon">
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
             <li><a href="/">Home</a></li>
@@ -22,7 +22,7 @@
         </ul>
         <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
         <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
-    </nav>
+    </nav> -->
     <div class="head">
         <h1 class="h1head">Step II: Enter Details And Address</h1>
     </div>
@@ -54,7 +54,10 @@
             <button type="submit" class="paybtn">Place Order →</button>
         </form>
     </div>
-    <button class="contbtn"><a href="{% url 'store' %}">← Continue Shopping</a></button>
+    <button class="contbtn"><a href="{% url 'cart' %}">← Continue Shopping</a></button>
 </body>
-
+<script>
+    // window.history.replaceState()
+    // window.history.back()
+</script>
 </html>

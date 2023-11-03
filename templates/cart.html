@@ -7,224 +7,9 @@
     <title>My Cart - MADSHIP</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     {% load static %}
+    <link rel="stylesheet" href="{% static 'cart.css' %}">
     <link rel="stylesheet" href="{% static 'carts.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .df {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .heading {
-            width: 1200px;
-            height: 50px;
-            /* background: green; */
-            box-shadow: 0 0 13px rgb(113, 112, 112);
-            margin-top: 10px;
-            border-radius: 12px;
-        }
-
-        .heading p {
-            font-size: 40px;
-            color: #555353;
-        }
-
-        .mainbox {
-            width: 1200px;
-            align-self: flex-start;
-            gap: 25px;
-        }
-
-        .b {
-            width: 850px;
-        }
-
-        .boxes {
-            align-self: flex-start;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .box {
-            /* width: 1200px;
-            gap: 35px; */
-            width: 850px;
-            gap: 10px;
-            height: 100px;
-            font-size: 24px;
-            box-shadow: 0 0 12px gray;
-            border-radius: 12px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            padding-left: 10px;
-            /* align-self: flex-start; */
-            /* margin-left: 15px; */
-        }
-
-        .image {
-            width: 75px;
-        }
-
-        .image img {
-            /* width: 75px; */
-            height: 85px;
-        }
-
-        .title {
-            flex-wrap: wrap;
-            width: 400px;
-            font-size: 20px;
-            justify-content: flex-start;
-        }
-
-        .qty {
-            width: 145px;
-            box-shadow: 0 0 10px gray;
-            padding: 5px;
-            font-size: 21px;
-            border-radius: 7px;
-        }
-
-        .qty p {
-            padding: 0px 5px;
-        }
-
-        .arrow {
-            width: 20px;
-            height: 30px;
-            flex-direction: column;
-        }
-
-        .arrow img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .arrow img:hover {
-            cursor: pointer;
-        }
-
-        .remove button {
-            border: none;
-            padding: 5px;
-            font-size: 20px;
-            color: white;
-            background: red;
-            border-radius: 5px;
-        }
-
-        .remove button:hover {
-            cursor: pointer;
-            box-shadow: 0 0 3px white, 0 0 4px gray, 0 0 5px red;
-        }
-
-        .buy {
-            width: 280px;
-            height: 320px;
-            box-shadow: 0 0 10px gray;
-            border-radius: 10px;
-            flex-direction: column;
-            gap: 15px;
-            align-self: flex-start;
-            margin-top: 15px;
-        }
-
-        .cmm {
-            width: 90%;
-            height: 35px;
-            font-size: 22px;
-            color: rgb(67, 67, 67);
-            justify-content: space-between;
-            gap: 5px;
-        }
-
-        .prcdtl {
-            justify-content: center;
-            font-weight: bold;
-            font-size: 35px;
-            position: relative;
-            bottom: 20px;
-        }
-
-        
-        .ttlprc {
-            gap: 5px;
-        }
-
-        .ttlprc div {
-            width: 80px;
-            justify-content: flex-end;
-        }
-        
-        .itmqty {
-            gap: 100px;
-        }
-
-        .dscntprc {
-            gap: 90px;
-        }
-        
-        .dscntprc div {
-            color: rgb(4, 155, 4);
-        }
-        
-        .dlvrycrg {
-            gap: 50px;
-        }
-        
-        .amount {
-            width: 85px;
-            font-size: 20px;
-        }
-        
-        .plcord {
-            position: relative;
-            top: 20px;
-        }
-
-        .plcord button {
-            height: 40px;
-            border: none;
-            background: #e5cf5f;
-            font-size: 22px;
-            border-radius: 5px;
-        }
-
-        .plcord button:hover {
-            cursor: pointer;
-            box-shadow: 0 0 3px white, 0 0 4px gray, 0 0 5px #f7e692;
-        }
-        #plcord {
-            width: 100%;
-        }
-
-        #plcord a {
-            width: 100%;
-            display: inline-block;
-            text-decoration: none;
-            color: rgb(78, 78, 78);
-            font-weight: bold;
-        }
-
-        .mtcrt {
-            font-size: 80px;
-            color: #b9b9b9;
-            position: absolute;
-            top: 50%;
-            left: 35%;
-        }
-    </style>
 </head>
 
 <body>
@@ -274,7 +59,7 @@
                 </div>`;
     }
     for (let i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.key(i))
+        // console.log(localStorage.key(i))
         let newdiv = document.createElement('div')
         newdiv.className = 'box df';
         newdiv.id = "" + localStorage.key(i) + ""
@@ -293,8 +78,8 @@
                         <div class="title df" id="title">${titl}</div>
                         <div class="qty df">Quantity : <p id="qty">${qtyitm}</p>
                             <div class="arrow df">
-                                <img src="{%static 'up.png'%}" alt="">
-                                <img src="{%static 'down.png'%}" alt="">
+                                <img src="{%static 'up.png'%}" alt="" onclick="qtychangeup(${localStorage.key(i)})">
+                                <img src="{%static 'down.png'%}" alt="" onclick="qtychangedown(${localStorage.key(i)})">
                             </div>
                         </div>
                         <div class="amount df">₹
@@ -322,15 +107,52 @@
                                         </div>
                                 `;
         }
+        document.getElementById("itmqty").innerText = numitem;
+        document.getElementById("ttlprcdis").innerText = discntprice + 50;
     }
 
-    document.getElementById("itmqty").innerText = numitem;
-    document.getElementById("ttlprcdis").innerText = discntprice + 50;
 
     function deleteitem(itemid) {
         localStorage.removeItem(itemid)
         let itembox = document.getElementById("" + itemid)
         itembox.remove();
+        window.location.reload()
+    }
+
+    function qtychangeup(id){
+        let imgg = JSON.parse(localStorage.getItem(id)).image;
+        let titl = JSON.parse(localStorage.getItem(id)).title;
+        let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
+        let pric = JSON.parse(localStorage.getItem(id)).price;
+        let act = JSON.parse(localStorage.getItem(id)).actprc;
+
+        let data = {
+                'title': titl,
+                "quantity": ++qtyitm,
+                "image": imgg,
+                "price": pric,
+                "actprc": act
+            }
+            
+        localStorage.setItem(id,JSON.stringify(data))
+        window.location.reload()
+    }
+    function qtychangedown(id){
+        let imgg = JSON.parse(localStorage.getItem(id)).image;
+        let titl = JSON.parse(localStorage.getItem(id)).title;
+        let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
+        let pric = JSON.parse(localStorage.getItem(id)).price;
+        let act = JSON.parse(localStorage.getItem(id)).actprc;
+
+        let data = {
+                'title': titl,
+                "quantity": --qtyitm,
+                "image": imgg,
+                "price": pric,
+                "actprc": act
+            }
+            
+        localStorage.setItem(id,JSON.stringify(data))
         window.location.reload()
     }
 </script>
