@@ -77,15 +77,32 @@ def product(request):
     return render(request,'product.html',{'data':"error"})
 
 
-def checkout(request):
-    cstmrname = (request.POST.get('cstmrname'))
-    cstmremail = (request.POST.get("cstmremail"))
-    cstmraddress = (request.POST.get("cstmraddress"))
-    cstmrphone = request.POST.get("cstmrphone")
-    cstmrnpincode = request.POST.get("cstmrnpincode")
+# def checkout(request):
+#     cstmrname = (request.POST.get('cstmrname'))
+#     cstmremail = (request.POST.get("cstmremail"))
+#     cstmraddress = (request.POST.get("cstmraddress"))
+#     cstmrphone = request.POST.get("cstmrphone")
+#     cstmrnpincode = request.POST.get("cstmrnpincode")
 
-    if(cstmrname == "" or cstmremail == "" or cstmraddress == "" or cstmrphone == '' or cstmrnpincode == ''):
-        return render(request,'checkout.html')
-    customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=(cstmrphone), pincode=(cstmrnpincode))
-    customerdata.save()
-    return render(request,'checkout.html')
+#     if(cstmrname == "" or cstmremail == "" or cstmraddress == "" or cstmrphone == '' or cstmrnpincode == ''):
+#         return render(request,'checkout.html')
+#     customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=(cstmrphone), pincode=(cstmrnpincode))
+#     customerdata.save()
+#     return render(request,'checkout.html')
+
+
+def checkout(request):
+    if request.method == 'POST':
+        cstmrname = request.POST.get('name', '')
+        cstmremail = request.POST.get('mail', '')
+        cstmraddress = request.POST.get('address', '')
+        cstmrphone = request.POST.get('mobile', '')
+        cstmrpincode = request.POST.get('pincode', '')
+
+        if not (cstmrname and cstmremail and cstmraddress and cstmrphone and cstmrpincode):
+            return render(request, 'checkout.html')
+
+        customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=cstmrphone, pincode=cstmrpincode)
+        customerdata.save()
+
+    return render(request, 'checkout.html')

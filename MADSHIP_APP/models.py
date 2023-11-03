@@ -30,12 +30,11 @@ class ProductItem(models.Model):
         return self.title
     
 class customerdetail(models.Model):
-    name = models.CharField(max_length=50, blank=True)
-    address = models.CharField(max_length=500)
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=500, null=True, blank=True)
     mail = models.EmailField()
     mobile = models.PositiveBigIntegerField()
     pincode = models.PositiveIntegerField()
 
     def __str__(self) -> str:
         return self.name
-
