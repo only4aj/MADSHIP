@@ -205,8 +205,10 @@ nav ul li a:hover {
     padding: 4px;
     border: 2px solid rgb(230, 228, 228);
     border-radius: 5px;
-}
-
-.contbtn{
     cursor: pointer;
 }
+
+/* .contbtn a{
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+} */
