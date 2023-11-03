@@ -59,7 +59,7 @@
                 </div>`;
     }
     for (let i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.key(i))
+        // console.log(localStorage.key(i))
         let newdiv = document.createElement('div')
         newdiv.className = 'box df';
         newdiv.id = "" + localStorage.key(i) + ""
@@ -78,8 +78,8 @@
                         <div class="title df" id="title">${titl}</div>
                         <div class="qty df">Quantity : <p id="qty">${qtyitm}</p>
                             <div class="arrow df">
-                                <img src="{%static 'up.png'%}" alt="">
-                                <img src="{%static 'down.png'%}" alt="">
+                                <img src="{%static 'up.png'%}" alt="" onclick="qtychangeup(${localStorage.key(i)})">
+                                <img src="{%static 'down.png'%}" alt="" onclick="qtychangedown(${localStorage.key(i)})">
                             </div>
                         </div>
                         <div class="amount df">₹
@@ -116,6 +116,43 @@
         localStorage.removeItem(itemid)
         let itembox = document.getElementById("" + itemid)
         itembox.remove();
+        window.location.reload()
+    }
+
+    function qtychangeup(id){
+        let imgg = JSON.parse(localStorage.getItem(id)).image;
+        let titl = JSON.parse(localStorage.getItem(id)).title;
+        let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
+        let pric = JSON.parse(localStorage.getItem(id)).price;
+        let act = JSON.parse(localStorage.getItem(id)).actprc;
+
+        let data = {
+                'title': titl,
+                "quantity": ++qtyitm,
+                "image": imgg,
+                "price": pric,
+                "actprc": act
+            }
+            
+        localStorage.setItem(id,JSON.stringify(data))
+        window.location.reload()
+    }
+    function qtychangedown(id){
+        let imgg = JSON.parse(localStorage.getItem(id)).image;
+        let titl = JSON.parse(localStorage.getItem(id)).title;
+        let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
+        let pric = JSON.parse(localStorage.getItem(id)).price;
+        let act = JSON.parse(localStorage.getItem(id)).actprc;
+
+        let data = {
+                'title': titl,
+                "quantity": --qtyitm,
+                "image": imgg,
+                "price": pric,
+                "actprc": act
+            }
+            
+        localStorage.setItem(id,JSON.stringify(data))
         window.location.reload()
     }
 </script>
