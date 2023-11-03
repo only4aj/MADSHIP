@@ -322,10 +322,10 @@
                                         </div>
                                 `;
         }
+        document.getElementById("itmqty").innerText = numitem;
+        document.getElementById("ttlprcdis").innerText = discntprice + 50;
     }
 
-    document.getElementById("itmqty").innerText = numitem;
-    document.getElementById("ttlprcdis").innerText = discntprice + 50;
 
     function deleteitem(itemid) {
         localStorage.removeItem(itemid)
