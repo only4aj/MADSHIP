@@ -119,7 +119,7 @@
         window.location.reload()
     }
 
-    function qtychangeup(id){
+    function qtychangeup(id) {
         let imgg = JSON.parse(localStorage.getItem(id)).image;
         let titl = JSON.parse(localStorage.getItem(id)).title;
         let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
@@ -127,32 +127,37 @@
         let act = JSON.parse(localStorage.getItem(id)).actprc;
 
         let data = {
-                'title': titl,
-                "quantity": ++qtyitm,
-                "image": imgg,
-                "price": pric,
-                "actprc": act
-            }
-            
-        localStorage.setItem(id,JSON.stringify(data))
+            'title': titl,
+            "quantity": ++qtyitm,
+            "image": imgg,
+            "price": pric,
+            "actprc": act
+        }
+
+        localStorage.setItem(id, JSON.stringify(data))
         window.location.reload()
     }
-    function qtychangedown(id){
-        let imgg = JSON.parse(localStorage.getItem(id)).image;
-        let titl = JSON.parse(localStorage.getItem(id)).title;
+    function qtychangedown(id) {
         let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
-        let pric = JSON.parse(localStorage.getItem(id)).price;
-        let act = JSON.parse(localStorage.getItem(id)).actprc;
+        if (qtyitm == 1) {
+            deleteitem(id)
+        }
+        else {
+            let imgg = JSON.parse(localStorage.getItem(id)).image;
+            let titl = JSON.parse(localStorage.getItem(id)).title;
+            let pric = JSON.parse(localStorage.getItem(id)).price;
+            let act = JSON.parse(localStorage.getItem(id)).actprc;
 
-        let data = {
+            let data = {
                 'title': titl,
                 "quantity": --qtyitm,
                 "image": imgg,
                 "price": pric,
                 "actprc": act
             }
-            
-        localStorage.setItem(id,JSON.stringify(data))
+
+            localStorage.setItem(id, JSON.stringify(data))
+        }
         window.location.reload()
     }
 </script>
