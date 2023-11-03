@@ -33,8 +33,8 @@ class customerdetail(models.Model):
     name = models.CharField(max_length=50, blank=True)
     address = models.CharField(max_length=500)
     mail = models.EmailField()
-    mobile = models.PositiveBigIntegerField(default=0)
-    pincode = models.PositiveIntegerField(default=0)
+    mobile = models.PositiveBigIntegerField()
+    pincode = models.PositiveIntegerField()
 
     def __str__(self) -> str:
         return self.name
