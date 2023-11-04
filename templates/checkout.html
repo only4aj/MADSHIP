@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     {% load static %}
+    <script src="{% static 'blinklight.js'%}"></script>
     <link rel="stylesheet" href="{% static 'checkouts.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
@@ -54,7 +55,7 @@
                 <input class="midspc" type="tel" name="pincode" id="cstmrpincode">
             </div>
             <div class="btn" id="gotobtn">
-                <button id="rzp-button1" type="submit" class="paybtn" onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>
+                <button id="rzp-button1" type="button" class="paybtn" onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>
             </div>
         </form>
     </div>
@@ -62,7 +63,10 @@
     <button class="contbtn" onclick="forward()">← Continue Shopping</button>
 </body>
 <script>
+<<<<<<< HEAD
     // Direct Click to go Back button set funtion
+=======
+>>>>>>> 5c5c85cdeca10ae24d678efa76e54c86ecd516d4
 
     function initializePayment(orderId, amount) {
         var options = {
@@ -85,7 +89,11 @@
         var rzp1 = new Razorpay(options);
         rzp1.open();
     }
+<<<<<<< HEAD
 
+=======
+{% comment %} 
+>>>>>>> 5c5c85cdeca10ae24d678efa76e54c86ecd516d4
     function forward() {
         window.history.back()
     }
@@ -115,6 +123,6 @@
     //     console.log(price)
     // } 
 </script>
-<script src="{% static 'blinklight.js'%}"></script>
+
 
 </html>
