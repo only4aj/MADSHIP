@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - MADSHIP</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    {% load static %}
+        {% load static %}
     <link rel="stylesheet" href="{% static 'checkouts.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
@@ -69,10 +69,7 @@
     
         if(localStorage.length == 0){
             document.getElementById("gotobtn").remove()
-            setInterval(function(){
-                alert("Please add item in cart!")
-                window.location.reload()
-            },1)
+            
         }
         else{
             document.getElementById("gotobtn").innerHTML = `<button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>`;
