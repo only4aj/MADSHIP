@@ -29,6 +29,7 @@
     <div class="flexcol">
         <form action="{% url 'checkout' %}" method="post">
             {% csrf_token %}
+            <input type="hidden" name="amount" id="amount">
             <div class="flexfields">
                 <label class="fntsz" for="cstmrname">Name:</label>
                 <input class="midspc" type="text" name="name" id="cstmrname">
