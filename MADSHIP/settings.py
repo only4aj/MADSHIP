@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MADSHIP_APP'
+    'MADSHIP_APP',
+    'razorpay'
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
+
+
+KEY = 'rzp_test_RibqbGc5MSrTVh'
+SECRET = 'Lg8xkSs4Nc44mPAv2Ht5Zggo'
