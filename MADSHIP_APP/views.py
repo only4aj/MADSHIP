@@ -1,5 +1,8 @@
 from django.shortcuts import render,HttpResponse
+from django.http import JsonResponse
 from .models import Customer,ProductItem,customerdetail
+import razorpay
+from django.conf import settings
 # from .models import Customer
 # Create your views here.
 def index(request):
@@ -104,5 +107,15 @@ def checkout(request):
 
         customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=cstmrphone, pincode=cstmrpincode)
         customerdata.save()
+
+        id = customerdata.id
+        client = razorpay.Client(auth=("rzp_test_RibqbGc5MSrTVh", "Lg8xkSs4Nc44mPAv2Ht5Zggo"))
+        try:
+            amount = 10000
+            order = client.order.create({'amount': amount*100, 'currency': 'INR', 'payment_capture': 1})
+        except Exception as e:
+            return JsonResponse({'message': 'Error creating Razorpay order'})
+
+        return JsonResponse({'order_id': order.get('id'), 'amount': order.get('amount')})
 
     return render(request, 'checkout.html')
