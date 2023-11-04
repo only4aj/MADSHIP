@@ -72,9 +72,10 @@
 
 .title {
     flex-wrap: wrap;
-    width: 400px;
+    width: 380px;
     font-size: 20px;
     justify-content: flex-start;
+    margin-left: 15px;
 }
 
 .qty {

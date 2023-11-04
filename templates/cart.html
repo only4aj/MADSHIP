@@ -111,7 +111,7 @@
         document.getElementById("ttlprcdis").innerText = discntprice + 50;
     }
 
-
+    // Remove item function
     function deleteitem(itemid) {
         localStorage.removeItem(itemid)
         let itembox = document.getElementById("" + itemid)
@@ -119,6 +119,7 @@
         window.location.reload()
     }
 
+    // Quantity of item add function
     function qtychangeup(id) {
         let imgg = JSON.parse(localStorage.getItem(id)).image;
         let titl = JSON.parse(localStorage.getItem(id)).title;
@@ -137,6 +138,8 @@
         localStorage.setItem(id, JSON.stringify(data))
         window.location.reload()
     }
+
+    // Item Quantity Minus function
     function qtychangedown(id) {
         let qtyitm = JSON.parse(localStorage.getItem(id)).quantity;
         if (qtyitm == 1) {
@@ -160,6 +163,7 @@
         }
         window.location.reload()
     }
+
 </script>
 
 </html>
