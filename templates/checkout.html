@@ -66,6 +66,13 @@
         window.history.back()
     }
 
+    // Forward Button of Browser disabled
+    if(localStorage.length == 0){
+        function stopforward(){window.history.back(1);}
+        setTimeout(stopforward(),0)
+    }
+
+    // Place Order button remove or add
     if (localStorage.length == 0) {
         document.getElementById("gotobtn").remove()
         alert("Please add item in cart!")
@@ -74,6 +81,7 @@
         document.getElementById("gotobtn").innerHTML = `<button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>`;
     }
 
+    // Amount Fetch from DataBase
     if(localStorage.length > 0){
         let price = 50
         for(let i=0;i<localStorage.length;i++){
