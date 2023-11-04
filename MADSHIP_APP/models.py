@@ -31,6 +31,7 @@ class ProductItem(models.Model):
     
 class customerdetail(models.Model):
     name = models.CharField(max_length=50)
+    amount = models.IntegerField(default=0)
     address = models.CharField(max_length=500, null=True, blank=True)
     mail = models.EmailField()
     mobile = models.PositiveBigIntegerField()
