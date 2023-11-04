@@ -63,10 +63,6 @@
     <button class="contbtn" onclick="forward()">← Continue Shopping</button>
 </body>
 <script>
-<<<<<<< HEAD
-    // Direct Click to go Back button set funtion
-=======
->>>>>>> 5c5c85cdeca10ae24d678efa76e54c86ecd516d4
 
     function initializePayment(orderId, amount) {
         var options = {
@@ -88,12 +84,15 @@
 
         var rzp1 = new Razorpay(options);
         rzp1.open();
-    }
-<<<<<<< HEAD
 
-=======
-{% comment %} 
->>>>>>> 5c5c85cdeca10ae24d678efa76e54c86ecd516d4
+    }
+    
+    for(let i =0;i<localStorage.length;i++){
+        if(localStorage.key(i) === "rzp_checkout_anon_id" || localStorage.key(i) === "rzp_device_id"){
+            localStorage.removeItem(localStorage.key(i))
+            console.log(Number(localStorage.key(i)))
+        }
+    }
     function forward() {
         window.history.back()
     }
