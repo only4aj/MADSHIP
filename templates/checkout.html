@@ -52,17 +52,33 @@
                 <label class="fntsz" for="cstmrpincode">Pincode: </label>
                 <input class="midspc" type="tel" name="pincode" id="cstmrpincode">
             </div>
-            <button type="submit" class="paybtn">Place Order →</button>
+            <div class="btn" id="gotobtn">
+                <button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>
+            </div>
         </form>
     </div>
     <!-- <button class="contbtn" onclick="forward()"><a href="{% url 'cart' %}">← Continue Shopping</a></button> -->
     <button class="contbtn" onclick="forward()">← Continue Shopping</button>
 </body>
 <script>
+
     function forward(){
-        console.log("object")
+        // console.log("object")
         window.history.back()
     }
     
+<<<<<<< HEAD
+=======
+        if(localStorage.length == 0){
+            document.getElementById("gotobtn").remove()
+            setInterval(function(){
+                alert("Please add item in cart!")
+                window.location.reload()
+            },1)
+        }
+        else{
+            document.getElementById("gotobtn").innerHTML = `<button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>`;
+        }
+>>>>>>> 303652753f2f9d6e06d92f6c5eb219191896a99b
 </script>
 </html>
