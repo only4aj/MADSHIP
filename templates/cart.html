@@ -24,6 +24,8 @@
             </ul>
             <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
             <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+            <div class="dotbox" id="dotbox"></div>
+
         </nav>
     </header>
     <main>
@@ -165,5 +167,6 @@
     }
 
 </script>
+<script src="{% static 'blinklight.js'%}"></script>
 
 </html>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
     <link rel="stylesheet" href="{% static 'styls.css' %}">
-    <link rel="icon" href="{% static "MADICON.png" %}" type="image/png">
+    <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
 <body>
@@ -17,12 +17,14 @@
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="{% url "store" %}">Store</a></li>
-            <li><a href="{% url "about" %}">About Us</a></li>
+            <li><a href="{% url 'store' %}">Store</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <button type="submit" id="login" class="login"><a href={% url "login" %}>Sign In</a></button>
-        <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
+        <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <!-- <div class="dotbox" id="dotbox"></div> -->
+
     </nav>
     <div class="mainsection">
         <div class="sideimage">
@@ -163,17 +165,17 @@
         <div class="flextesty">
             <div class="testimonial">
                 <p class="testypeepsay"><span class= "testyquote">“</span><br>MADSHIP makes online shopping a breeze with its vast selection and seamless user experience. I'm a happy, repeat customer!</p>
-                <img src="{% static "testyfirstpic.png" %}" alt="" class= "peeppic" width="50px" height= "50px">
+                <img src="{% static 'testyfirstpic.png' %}" alt="" class= "peeppic" width="50px" height= "50px">
                 <h4 class= "peepname">Raghav Jain</h4>
             </div>
             <div class="testimonial">
                 <p class="testypeepsay"><span class= "testyquote">“</span><br>MADSHIP is my go-to online shopping destination – their quality products, competitive prices, and fast delivery keep me coming back for more!</p>
-                <img src="{% static "testysecondpic.png" %}" alt="" class= "peeppic" width="50px" height= "50px">
+                <img src="{% static 'testysecondpic.png' %}" alt="" class= "peeppic" width="50px" height= "50px">
                 <h4 class= "peepname">Arushi Sinha</h4>
             </div>
             <div class="testimonial">
                 <p class="testypeepsay"><span class= "testyquote">“</span><br>Discover the ultimate shopping experience at MADSHIP, where variety and convenience meet. Shop here for your every desire!</p>
-                <img src="{% static "testythirdpic.png" %}" alt="" class= "peeppic" width="50px" height= "50px">
+                <img src="{% static 'testythirdpic.png' %}" alt="" class= "peeppic" width="50px" height= "50px">
                 <h4 class= "peepname">Vivek Shukla</h4>
             </div>
 
@@ -253,4 +255,6 @@
     </footer>
     <script src="{% static 'faq.js' %}"></script>
 </body>
+<!-- <script src="{% static 'blinklight.js'%}"></script> -->
+
 </html>

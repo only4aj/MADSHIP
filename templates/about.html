@@ -12,7 +12,8 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'abouts.css' %}">
-    <link rel="icon" href="{% static "MADICON.png" %}" type="image/png">
+    <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
+    <div class="dotbox" id="dotbox"></div>
 </head>
 
 <body>
@@ -20,12 +21,13 @@
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="{% url "store" %}">Store</a></li>
-            <li><a href="{% url "about" %}">About Us</a></li>
+            <li><a href="{% url 'store' %}">Store</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <button type="submit" id="login" class="login"><a href={% url "login" %}>Sign In</a></button>
-        <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <button type="submit" id="login" class="login"><a href='{% url "login" %}'>Sign In</a></button>
+        <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <!-- <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div> -->
     </nav>
 
     <h1 class="visionhead">OUR VISION</h1>
@@ -146,3 +148,7 @@
         </div>
     </footer>
 <!-- Updated -->
+</body>
+<!-- <script src="{% static 'blinklight.js'%}"></script> -->
+
+</html>

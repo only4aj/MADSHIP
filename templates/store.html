@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     {% load static %}
     <link rel="stylesheet" href="{% static 'store.css' %}">
-    <link rel="icon" href="{% static "MADICON.png" %}" type="image/png">
+    <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
 <body>
@@ -16,12 +16,13 @@
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="{% url "store" %}">Store</a></li>
-            <li><a href="{% url "about" %}">About Us</a></li>
+            <li><a href="{% url 'store' %}">Store</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <button type="submit" id="login" class="login"><a href={% url "login" %}>Sign In</a></button>
-        <a href="{% url "cart" %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
+        <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+
     </nav>
     <div class="mainheading">
         <h1 class="mainh1">CHOOSE A <span class="storegold">CATEGORY</span></h1>
@@ -86,4 +87,6 @@
     </footer>
 </body>
 <script src="{% static 'javascript.js' %}"></script>
+<!-- <script src="{% static 'blinklight.js'%}"></script> -->
+
 </html>

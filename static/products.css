@@ -1,4 +1,5 @@
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Ubuntu&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -119,6 +120,19 @@ nav ul li a:hover {
     transition: ease-in;
 }
 
+.dotbox {
+    position: absolute;
+    right: 45px;
+    top: 5px;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    background: blue;
+    border-radius: 50%;
+}
+
 .df {
     display: flex;
     justify-content: center;
@@ -224,7 +238,8 @@ main {
     font-weight: bold;
     padding-bottom: 5px;
 }
-.dtl p{
+
+.dtl p {
     width: 650px;
     /* height: 210px; */
     padding: 0 20px;
@@ -232,7 +247,7 @@ main {
     padding-top: 5px;
     line-height: 25px;
     font-family: 'Open Sans', sans-serif;
-/* font-family: 'Ubuntu', sans-serif; */
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 form {
