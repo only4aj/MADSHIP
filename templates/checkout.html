@@ -62,20 +62,26 @@
 </body>
 <script>
 
-    function forward(){
-        // console.log("object")
+    function forward() {
         window.history.back()
     }
-    
-        if(localStorage.length == 0){
-            document.getElementById("gotobtn").remove()
-            setInterval(function(){
-                alert("Please add item in cart!")
-                window.location.reload()
-            },1)
+
+    if (localStorage.length == 0) {
+        document.getElementById("gotobtn").remove()
+        alert("Please add item in cart!")
+    }
+    else {
+        document.getElementById("gotobtn").innerHTML = `<button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>`;
+    }
+
+    if(localStorage.length > 0){
+        let price = 50
+        for(let i=0;i<localStorage.length;i++){
+            let id = localStorage.key(i)
+            price += JSON.parse(localStorage.getItem(id)).price*JSON.parse(localStorage.getItem(id)).quantity
         }
-        else{
-            document.getElementById("gotobtn").innerHTML = `<button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>`;
-        }
+        console.log(price)
+    }
 </script>
+
 </html>
