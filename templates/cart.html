@@ -55,11 +55,10 @@
     let actualprice = 0, discntprice = 0;
 
     for (let i = 0; i < localStorage.length; i++) {
-        // console.log(localStorage.key(i))
         if (Number(localStorage.key(i))) {
             let newdiv = document.createElement('div')
             newdiv.className = 'box df';
-            newdiv.id = "" + localStorage.key(i) + ""
+            newdiv.id = "" + localStorage.key(i)
 
             let imgg = JSON.parse(localStorage.getItem(localStorage.key(i))).image;
             let titl = JSON.parse(localStorage.getItem(localStorage.key(i))).title;
