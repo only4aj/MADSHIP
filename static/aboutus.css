@@ -126,7 +126,6 @@ h1 {
 }
 
 #login {
-
     margin-left: 40px;
     font-size: 20px;
     font-weight: bold;
@@ -186,7 +185,6 @@ nav ul li a:hover {
     border: 2px solid rgb(214, 210, 210);
 
 }
-
 
 .parag {
     font-size: 20px;
@@ -262,6 +260,8 @@ nav ul li a:hover {
 .fancysep {
     margin: 20px 0px;
     margin-left: 125px;
+    position: relative;
+    bottom: 335px;
 }
 
 footer {
@@ -277,7 +277,6 @@ footer {
     padding-top: 70px;
 }
 
-
 .socialmedia {
     word-spacing: 20px;
     display: flex;
@@ -290,12 +289,10 @@ footer {
     word-spacing: 2px;
 }
 
-
 .rights {
     color: rgb(165, 163, 163);
     padding-left: 60px;
 }
-
 
 /* New Code */
 .df {
@@ -328,7 +325,7 @@ footer {
 }
 
 .design {
-    gap: 150px;
+    /* gap: 150px; */
     flex-direction: column;
 }
 
@@ -341,19 +338,18 @@ footer {
 }
 
 .line {
-    position: absolute;
-    top: 500px;
+    position: relative;
 }
 
 .l1 {
-    left: 60px;
+    right: 540px;
 }
 
 .line1 {
     width: 20px;
     height: 5px;
     background: rgb(165, 163, 163);
-    top: 780px;
+    bottom: 160px;
     border-top-left-radius: 10px;
 }
 
@@ -361,27 +357,29 @@ footer {
     width: 5px;
     height: 500px;
     background: rgb(165, 163, 163);
-    top: 780px;
+    bottom: 165px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    right: 548px;
 }
 
 .line3 {
     width: 122px;
     height: 5px;
     background: rgb(165, 163, 163);
-    top: 1275px;
+    bottom: 170px;
     border-bottom-left-radius: 10px;
+    right: 488px;
 }
 
 .l2{
-    right: 30px;
+    left: 565px;
 }
 .line4 {
     width: 26px;
     height: 5px;
     background: rgb(165, 163, 163);
-    top: 1275px;
+    bottom: 515px;
     border-top-right-radius: 10px;
 }
 
@@ -389,21 +387,25 @@ footer {
     width: 5px;
     height: 500px;
     background: rgb(165, 163, 163);
-    top: 1275px;
+    bottom: 520px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    left: 577px;
 }
 
 .line6 {
     width: 147px;
     height: 5px;
     background-color: rgb(165, 163, 163);
-    top: 1770px;
+    bottom: 525px;
     border-bottom-right-radius: 10px;
+    left: 505px;
 }
 
 .md{
     margin-right: 240px;
+    position: relative;
+    bottom: 695px;
 }
 
 .keyanima{
