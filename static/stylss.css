@@ -9,11 +9,11 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     background: transparent;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background: transparent;
     color: white;
 }
@@ -343,30 +343,35 @@ nav ul li a:hover {
     font-size: 18px;
 }
 
-.fnt{
+.fnt {
     color: #333333;
 }
 
-.sbph2{
+.sbph2 {
     color: rgb(56, 56, 56);
 }
 
 
 .viewbtn {
-    /* margin-top: 100px; */
-    /* margin-left: 880px; */
     font-size: 20px;
     font-weight: bold;
     background-color: #333333;
-    border: 4px solid #333333;
+    border: 1px solid #333333;
     border-radius: 5px;
-    padding: 5px;
+    /* padding: 5px; */
+    width: 100px;
+    height: 35px;
 }
 
 
 .viewbtn a {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: rgb(235, 235, 235);
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -403,6 +408,7 @@ nav ul li a:hover {
     gap: 90px;
 
 }
+
 /* 
 .roll1 {
     padding-left: 150px;
@@ -481,7 +487,7 @@ footer {
     margin-left: 12px;
 }
 
-.vcsbtn{
+.vcsbtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -489,12 +495,12 @@ footer {
     margin-bottom: 80px;
 }
 
-.roll{
+.roll {
     margin-left: 30px;
 }
 
-.testyhead{
-    
+.testyhead {
+
     margin-left: 100px;
     font-size: 40px;
     color: rgb(225, 171, 33);
@@ -502,7 +508,7 @@ footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.testypara{
+.testypara {
     margin-top: 10px;
     color: grey;
     font-size: 20px;
@@ -510,7 +516,7 @@ footer {
     margin-left: 100px;
 }
 
-.testyupper{
+.testyupper {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
@@ -522,9 +528,10 @@ footer {
     margin-left: 100px;
     box-shadow: 0px 0px 30px grey;
 }
+
 /* ------------ */
 
-.testimonial{
+.testimonial {
     width: 250px;
     height: 250px;
     background-color: rgb(240, 238, 238);
@@ -533,7 +540,7 @@ footer {
     border-top: 50px solid goldenrod;
 }
 
-.flextesty{
+.flextesty {
     margin-left: 150px;
     justify-content: space-between;
     width: 900px;
@@ -542,7 +549,7 @@ footer {
     margin-top: 80px;
 }
 
-.testypeepsay{
+.testypeepsay {
     margin-left: 10px;
     margin-right: 10px;
     /* margin-top: 10px; */
@@ -552,24 +559,24 @@ footer {
     color: rgb(96, 96, 96);
 }
 
-.peeppic{
+.peeppic {
     border-radius: 50px;
     margin-left: 100px;
 }
 
-.peepname{
-    margin-left:75px;
+.peepname {
+    margin-left: 75px;
     font-weight: bold;
     color: rgb(135, 135, 135);
     font-family: sans-serif;
 }
 
-.testyquote{
+.testyquote {
     color: goldenrod;
     font-size: 50px;
 }
 
-.testimonial:hover{
+.testimonial:hover {
     box-shadow: 0px 0px 20px grey;
     transition: 0.3s;
     cursor: pointer;
@@ -584,20 +591,20 @@ footer {
     margin-top: 100px;
 }
 
-.title{
+.title {
     font-family: "Quicksand";
     color: #333333;
     font-size: 70px;
     margin-top: 50px;
 }
 
-.freqask{
+.freqask {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.faq{
+.faq {
     max-width: 700px;
     margin-top: 50px;
     padding-bottom: 15px;
@@ -605,13 +612,13 @@ footer {
     cursor: pointer;
 }
 
-.question{
+.question {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.question h3{
+.question h3 {
     font-size: 25px;
 }
 
@@ -620,7 +627,7 @@ footer {
     overflow: hidden;
 } */
 
-.answer p{
+.answer p {
     padding-top: 10px;
     line-height: 1.6;
     font-size: 15px;
@@ -646,5 +653,6 @@ footer {
 }
 
 .faq.active .answer {
-    max-height: 500px; /* Adjust the max height to your preference */
+    max-height: 500px;
+    /* Adjust the max height to your preference */
 }
