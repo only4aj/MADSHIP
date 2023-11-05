@@ -48,6 +48,5 @@ class ContactForm(models.Model):
     email = models.EmailField()
     desc = models.CharField(max_length=5000)
 
-
     def __str__(self) -> str:
         return self.fname
