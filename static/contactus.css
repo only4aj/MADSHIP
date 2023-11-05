@@ -139,7 +139,7 @@ nav ul li a:hover {
 
 .maincontainer{
     width: 1070px;
-    height: 700px;
+    height: 600px;
     margin-top: 10px;
     box-shadow: 10px 80px 100px rgb(109, 109, 109);
     gap: 20px;
@@ -178,7 +178,7 @@ footer {
 }
 
 .flexfields{
-    gap: 30px;
+    gap: 10px;
 
 }
 
@@ -239,13 +239,17 @@ form{
 
 
 .subbtn{
+    width: 100px;
     color: white;
     background-color: black;
     font-size: 25px;
     border: 2px solid black;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
+.subbtn:hover{
+    cursor: pointer;
+}
 .imgsz{
     width: 500px;
     height: 600px;
