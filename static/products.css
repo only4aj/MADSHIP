@@ -241,13 +241,12 @@ main {
 
 .dtl p {
     width: 650px;
-    /* height: 210px; */
     padding: 0 20px;
     color: #4e4d4d;
     padding-top: 5px;
     line-height: 25px;
     font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Ubuntu', sans-serif; */
+    margin-bottom: 10px;
 }
 
 form {
