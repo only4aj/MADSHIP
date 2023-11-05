@@ -198,13 +198,14 @@ nav ul li a:hover {
 
 .parag {
     font-size: 20px;
-    word-spacing: 7px;
+    word-spacing: 5px;
     font-family: Satisfy;
     quotes: "'" "'";
     line-height: 1.5;
     font-weight: bold;
     width: 700px;
     color: grey;
+    margin-right: 30px;
 
 }
 
