@@ -90,23 +90,23 @@
         rzp1.close()
     }
 
-    for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) === "rzp_checkout_anon_id" || localStorage.key(i) === "rzp_device_id") {
-            localStorage.removeItem(localStorage.key(i))
-            console.log(Number(localStorage.key(i)))
-        }
-    }
+    // for (let i = 0; i < localStorage.length; i++) {
+    //     if (localStorage.key(i) === "rzp_checkout_anon_id" || localStorage.key(i) === "rzp_device_id") {
+    //         localStorage.removeItem(localStorage.key(i))
+    //         console.log(Number(localStorage.key(i)))
+    //     }
+    // }
 
-
+    // Direct Back Function
     function forward() {
         window.history.back()
     }
 
     // // Forward Button of Browser disabled
-    // if(localStorage.length == 0){
-    //     function stopforward(){window.history.back(1);}
-    //     setTimeout(stopforward(),0)
-    // }
+    if(localStorage.length == 0){
+        function stopforward(){window.history.back(1);}
+        setTimeout(stopforward(),0)
+    }
 
     // // Place Order button remove or add
     // if (localStorage.length == 0) {
