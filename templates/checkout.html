@@ -89,32 +89,31 @@
         rzp1.open();
     }
 
-    for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) === "rzp_checkout_anon_id" || localStorage.key(i) === "rzp_device_id") {
-            localStorage.removeItem(localStorage.key(i))
-            console.log(Number(localStorage.key(i)))
-        }
-    }
 
-
+    // Direct Back Function
     function forward() {
         window.history.back()
     }
 
     // // Forward Button of Browser disabled
-    // if(localStorage.length == 0){
-    //     function stopforward(){window.history.back(1);}
-    //     setTimeout(stopforward(),0)
-    // }
+    let num = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        if (Number(localStorage.key(i))) {
+            num++;
+        }
+    }
+    if (num == 0) {
+        window.history.back();
+    }
 
     // // Place Order button remove or add
-    // if (localStorage.length == 0) {
-    //     document.getElementById("gotobtn").remove()
-    //     alert("Please add item in cart!")
-    // }
-    // else {
-    //     document.getElementById("gotobtn").innerHTML = `<button type="submit" class="paybtn" id="plcorder" onclick="gotoforward()">Place Order →</button>`;
-    // }
+    if (num == 0) {
+        document.getElementById("gotobtn").remove()
+    }
+    else {
+        document.getElementById("gotobtn").innerHTML = `<button id="rzp-button1" type="button" class="paybtn"
+                    onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>`;
+    }
 
     // // Amount Fetch from DataBase
     // if(localStorage.length > 0){

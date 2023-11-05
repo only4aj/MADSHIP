@@ -13,11 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function change(id) {
-  if (document.getElementsByClassName("fa-chevron-up").length > 0) {
-    document.querySelector("#"+id).classList.toggle("fa-chevron-down");
+  if(document.querySelector("#"+id).classList.contains("fa-chevron-up")){
     document.querySelector("#"+id).classList.remove("fa-chevron-up");
-  } else if (document.getElementsByClassName("fa-chevron-down").length > 0) {
+    document.querySelector("#"+id).classList.add("fa-chevron-down");
+  }
+  else if(document.querySelector("#"+id).classList.contains("fa-chevron-down")){
     document.querySelector("#"+id).classList.remove("fa-chevron-down");
-    document.querySelector("#"+id).classList.toggle("fa-chevron-up");
+    document.querySelector("#"+id).classList.add("fa-chevron-up");
   }
 }

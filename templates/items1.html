@@ -23,7 +23,7 @@
             </ul>
             <button type="submit" id="login" class="login"><a href="{% url 'logout' %}">Logout</a></button>
             <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
-            <!-- <div class="dotbox" id="dotbox"></div> -->
+            <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div>
 
         </nav>
     </header>
@@ -35,35 +35,36 @@
                 </div>
                 <div class="box-two bg-box df">
                     {%for i in data %}
-                    {% if i.item_id > 1000 and i.item_id < 1099 %} 
-                    <div class="box df">
+                    {% if i.item_id > 1000 and i.item_id < 1099 %} <div class="df">
                         <form action="{% url 'product'%}" method="post" class="box df">
-                            {% csrf_token %}
-                            <button type="submit" style="border: none;">
-                                <a>
-                                    <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
-                                    <img src="{{i.image.url}}" alt="kurta">
-                                </a>
-                            </button>
-                            <div class="box-data df fnt-sz">
-                                <button type="submit" style="border: none;"><p class="brand">{{i.brand}}</p></button>
-                                <p class="title">{{i.title}}</p>
-                                <div class="price df">
-                                    <p class="dis-p fnt-sz">₹ {{i.dis_price}}</p>
-                                    <p class="act-p fnt-sz">₹{{i.act_price}}</p>
-                                    <p class="dis fnt-sz">{{i.offer}}% off</p>
+                            <button type="submit" class="btn">
+                                <div class="box df">
+                                    {% csrf_token %}
+                                    <a>
+                                        <input type="text" name="id" value="{{i.item_id}}" style="display: none;">
+                                        <img src="{{i.image.url}}" alt="kurta">
+                                    </a>
+                                    <div class="box-data df fnt-sz">
+                                        <p class="brand">{{i.brand}}</p>
+                                        <p class="title">{{i.title}}</p>
+                                        <div class="price df">
+                                            <p class="dis-p fnt-sz">₹ {{i.dis_price}}</p>
+                                            <p class="act-p fnt-sz">₹{{i.act_price}}</p>
+                                            <p class="dis fnt-sz">{{i.offer}}% off</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </button>
                         </form>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
+        </div>
         </div>
     </main>
 </body>
 <script src="{% static 'javascript.js' %}"></script>
-<!-- <script src="{% static 'blinklight.js'%}"></script> -->
+<script src="{% static 'blinklight.js'%}"></script>
 
 </html>

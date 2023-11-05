@@ -23,7 +23,7 @@
         </ul>
         <button type="submit" id="login" class="login"><a href="{% url 'logout' %}">Logout</a></button>
         <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
-        <!-- <div class="dotbox" id="dotbox"></div> -->
+        <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div>
 
     </nav>
     <div class="mainsection">
@@ -190,7 +190,7 @@
         <div class="faq" onclick="change('up1')">
             <div class="question">
                 <h3>How long does shipping take ?</h3>
-                <i class="fa-solid fa-chevron-down" id="up1"></i>
+                <i class="fa-solid fa-chevron-down roop" id="up1"></i>
             </div>
             <div class="answer">
                 <p>Shipping typically takes 2-3 working days, although delivery times may vary depending on your location. Rest assured, we make every effort to get your order to you as quickly as possible.</p>
@@ -255,6 +255,6 @@
     </footer>
     <script src="{% static 'faq.js' %}"></script>
 </body>
-<!-- <script src="{% static 'blinklight.js'%}"></script> -->
+<script src="{% static 'blinklight.js'%}"></script>
 
 </html>

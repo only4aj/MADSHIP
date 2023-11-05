@@ -26,7 +26,6 @@ nav {
 
 nav ul li {
     text-decoration: none;
-    /* padding: 50px; */
     padding: 10px;
     padding-right: 20px;
 }
@@ -53,11 +52,9 @@ ul {
 
 nav ul li a {
     text-decoration: none;
-    /* padding: 30px; */
     padding: 5px;
     list-style-type: none;
     color: rgb(231, 225, 225);
-    /* font-size: 25px; */
     font-size: 22px;
     font-weight: bold;
     transition: 0.5s all;
@@ -87,8 +84,6 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     background-color: white;
-    /* border: 4px solid rgb(199, 174, 30); */
-    /* border-radius: 15px; */
     border: 3px solid rgb(199, 174, 30);
     border-radius: 13px;
 
@@ -103,7 +98,6 @@ h1 {
 
 #login:hover {
     background-color: rgb(212, 185, 33);
-    /* border-radius: 15px; */
 
 }
 
@@ -207,8 +201,3 @@ nav ul li a:hover {
     border-radius: 5px;
     cursor: pointer;
 }
-
-/* .contbtn a{
-    text-decoration: none;
-    color: rgb(78, 78, 78);
-} */

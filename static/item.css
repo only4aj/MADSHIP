@@ -219,6 +219,13 @@ nav ul li a:hover {
     flex-direction: column;
 }
 
+.btn{
+    background: none;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
 .box-one {
     width: 1180px;
     height: 50px;
@@ -276,7 +283,6 @@ nav ul li a:hover {
     width: 240px;
     height: 370px;
     border-radius: 7px;
-    box-shadow: 0 0 10px rgb(132, 108, 108);
     box-shadow: 0 2px 12px rgb(222, 221, 211);
     flex-direction: column;
     gap: 10px;
@@ -297,9 +303,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* .box a img:hover{
-    box-shadow: 0 0 8px rgb(184, 183, 183);
-} */
 .box-data {
     width: 240px;
     flex-direction: column;
@@ -309,6 +312,7 @@ nav ul li a:hover {
 
 .box-data p {
     margin-left: 10px;
+    text-align: start;
 }
 
 .brand {
@@ -328,4 +332,17 @@ nav ul li a:hover {
 .dis {
     color: green;
     font-size: 18px;
+}
+
+.dotbox {
+    position: absolute;
+    right: 45px;
+    top: 5px;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    background: blue;
+    border-radius: 50%;
 }

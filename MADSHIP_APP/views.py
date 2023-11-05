@@ -163,10 +163,8 @@ def checkout(request):
 @login_required(login_url='login')
 def contact(request):
 
-
     message = None
     clear_form = False
-
 
     if request.method == 'POST':
         firstname = request.POST.get('firstname')
