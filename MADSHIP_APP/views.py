@@ -1,11 +1,19 @@
 from django.shortcuts import render,HttpResponse, redirect
 from django.http import JsonResponse
 from .models import Customer,ProductItem,customerdetail,ContactForm
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.sessions.models import Session
+from django.contrib import messages
 import razorpay
 from django.conf import settings
 # from .models import Customer
 # Create your views here.
-def index(request):
+
+@login_required(login_url='login')
+def home(request):
+    user_id = request.session.get('user_id')
+    user_name = request.session.get('user_name')
     return render(request, "index.html")
 
 def items1(request):
@@ -24,7 +32,7 @@ def items4(request):
     data = ProductItem.objects.all()
     return render(request,'items4.html',{'data':data})
 
-def home(request):
+def login(request):
     username = str(request.POST.get('username'))
     passwrd = str(request.POST.get('pass'))
     if username == '' or passwrd == '':
@@ -38,12 +46,17 @@ def home(request):
         return render(request,'login.html',{'error':'Invalid Username or Password'})
 
 
+@login_required(login_url='login')
 def store(request):
     return render(request, "store.html")
 
+
+@login_required(login_url='login')
 def about(request):
     return render(request, "about.html")
 
+
+@login_required(login_url='login_success')
 def contact(request):
     return render(request, "contact.html")
 
@@ -53,24 +66,49 @@ def register(request):
 def login(request):
     return render(request, "login.html",{'error':''})
 
+
+@login_required(login_url='login')
 def cart(request):
     return render(request, "cart.html")
 
 def term(request):
     return render(request,'terms.html')
 
+
 def verification(request):
-    usern = request.POST.get('username')
-    email = request.POST.get('email')
-    phone = request.POST.get('phone')
-    passwrd = request.POST.get('pass')
+    if request.method == 'POST':
+        usern = request.POST.get('username')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        passwrd = request.POST.get('pass')
 
-    if( usern == '' or email == '' or phone == '' or passwrd == ''):
-        return render(request, "register.html")
-    data = Customer(username = usern,PNumber=phone,email=email,password=passwrd)
-    data.save()
-    return render(request,'login.html',{'error':''})
+        if usern == '' or email == '' or phone == '' or passwrd == '':
+            return render(request, "register.html")
 
+        # Create a new customer account
+        data = Customer(username=usern, PNumber=phone, email=email, password=passwrd)
+        data.save()
+
+        # Authenticate the new user
+        user = authenticate(request, username=usern, password=passwrd)
+
+        if user is not None:
+            login(request, user)
+            # Redirect to the 'home' page upon successful login
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid credentials')
+    
+    return render(request, 'login.html')
+
+
+def LogOut(request):
+    logout(request)
+    return redirect('login')
+
+
+
+@login_required(login_url='login')
 def product(request):
     itemId = request.POST.get('id')
     data = ProductItem.objects.all()
@@ -94,6 +132,7 @@ def product(request):
 #     return render(request,'checkout.html')
 
 
+@login_required(login_url='login')
 def checkout(request):
     if request.method == 'POST':
         cstmrname = request.POST.get('name', '')
@@ -121,6 +160,7 @@ def checkout(request):
     return render(request, 'checkout.html')
 
 
+@login_required(login_url='login')
 def contact(request):
 
 

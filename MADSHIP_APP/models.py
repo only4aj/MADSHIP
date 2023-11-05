@@ -4,8 +4,8 @@ from django.db import models
 
 class Customer(models.Model):
     username = models.CharField(max_length=30)
-    PNumber = models.PositiveBigIntegerField()
-    email = models.EmailField()
+    PNumber = models.PositiveBigIntegerField(default=0, null=True)
+    email = models.EmailField(null=True)
     password = models.CharField(max_length=20)
 
     def __str__(self) -> str:

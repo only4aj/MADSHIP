@@ -17,7 +17,7 @@
             <img src="{% static 'imgreg.png' %}" alt="" width="390px" height="550px">
             <div class="box">
                 <h1 class="heading">Register @ <span class="colgold">MADSHIP</span></h1>
-                <form action="{% url 'Setdata' %}" method="post">
+                <form action="{% url 'verification' %}" method="post">
                     {% csrf_token %}
                     <div>
                         <h3>Username</h3>
@@ -41,7 +41,7 @@
                     </div>
                     <div>
                         <!-- <a href="" class= "sbtn"><input type="button" value="Sign Up" class="submitbtn"></a> -->
-                        <input type="submit" value="Sign Up" class="submitbtn" onclick="checkRegister()">
+                        <button type="submit">Register</button>
                     </div>
                     <div class="loghere">
                         <span>Already Have an Account? <a href="{% url 'login' %}">Login Here</a></span>
