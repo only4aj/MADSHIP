@@ -4,8 +4,6 @@
 }
 
 body {
-    /* width: 100%;
-    height: 100%; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -26,7 +24,6 @@ nav {
 
 nav ul li {
     text-decoration: none;
-    /* padding: 50px; */
     padding: 10px;
     padding-right: 20px;
 }
@@ -50,19 +47,15 @@ ul {
     top: 0;
 }
 
-
 nav ul li a {
     text-decoration: none;
-    /* padding: 30px; */
     padding: 5px;
     list-style-type: none;
     color: rgb(231, 225, 225);
-    /* font-size: 25px; */
     font-size: 22px;
     font-weight: bold;
     transition: 0.5s all;
 }
-
 
 h1 {
     color: rgb(184, 179, 179);
@@ -73,13 +66,10 @@ h1 {
 }
 
 #login {
-
     margin-left: 40px;
     font-size: 20px;
     font-weight: bold;
     background-color: white;
-    /* border: 4px solid rgb(199, 174, 30); */
-    /* border-radius: 15px; */
     border: 3px solid rgb(199, 174, 30);
     border-radius: 13px;
 
@@ -94,8 +84,6 @@ h1 {
 
 #login:hover {
     background-color: rgb(212, 185, 33);
-    /* border-radius: 15px; */
-
 }
 
 #login a:hover {
@@ -127,7 +115,6 @@ nav ul li a:hover {
     transition: ease-in;
 }
 
-
 .mainhead {
     padding-left: 50px;
 }
@@ -135,14 +122,11 @@ nav ul li a:hover {
 .headning {
     font-size: 40px;
     padding-top: 110px;
-    /* font-size: 80px; */
-    /* padding-top: 400px; */
     margin: 0;
     color: rgb(58, 58, 58);
 }
 
 .headning3 {
-    /* padding-left: 80px; */
     margin-left: 40px;
     padding-top: 15px;
     font-size: 17px;
@@ -151,8 +135,6 @@ nav ul li a:hover {
 
 .paraning {
     font-size: 22px;
-    /* font-size: 25px;
-    padding-left: 35px; */
     color: crimson;
     margin-top: 23px;
 }
@@ -160,38 +142,29 @@ nav ul li a:hover {
 .mainbtn {
     margin-left: 80px;
     margin-top: 10px;
-    /* padding-left: 125px; */
     padding-right: 0px;
     padding-top: 15px;
-    /* font-size: 100px; */
     font-size: 30px;
 }
 
 .shopbtn {
-    /* margin-right: 20px; */
-    /* font-size: 25px; */
-    /* margin-right: 10px; */
     font-size: 22px;
     font-weight: bold;
     background-color: crimson;
     border: 4px solid crimson;
     padding: 1px;
-    /* border-radius: 15px; */
     border-radius: 12px;
 }
 
 .signbtn {
     margin-left: 100px;
-    /* font-size: 25px; */
     font-size: 22px;
     font-weight: bold;
     background-color: crimson;
     border: 4px solid crimson;
     padding: 1px;
-    /* border-radius: 15px; */
     border-radius: 12px;
 }
-
 
 .mainsection {
     display: flex;
@@ -208,18 +181,15 @@ nav ul li a:hover {
     padding: 0;
 }
 
-
 .shopbtn a {
     text-decoration: none;
     color: gold;
 }
 
-
 .signbtn a {
     text-decoration: none;
     color: gold;
 }
-
 
 .madship {
     color: goldenrod;
@@ -230,13 +200,10 @@ nav ul li a:hover {
     color: crimson;
 }
 
-
 .advertise {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
-    /* background-color: rgb(0, 0, 0); */
-    /* margin-top: 50px; */
     color: rgb(0, 0, 0);
 }
 
@@ -244,7 +211,6 @@ nav ul li a:hover {
 .firstimg {
     padding-left: 20px;
 }
-
 
 .secondimg {
     padding-left: 40px;
@@ -260,26 +226,21 @@ nav ul li a:hover {
     margin-left: 53px;
 }
 
-
 .firstpara {
     color: grey;
 }
-
 
 .secondpara {
     color: grey;
 }
 
-
 .thirdpara {
     color: grey;
-    /* padding-left: 20px; */
 }
 
 
 .headbycat {
     word-spacing: 10px;
-    /* padding-left: 750px; */
     padding-left: 100px;
     background-color: rgb(48, 47, 47);
     color: rgb(247, 247, 247);
@@ -295,11 +256,9 @@ nav ul li a:hover {
     font-style: italic;
 }
 
-
 .goldcat {
     color: rgb(247, 247, 247);
 }
-
 
 .shopby {
     color: rgb(247, 247, 247);
@@ -358,7 +317,6 @@ nav ul li a:hover {
     background-color: #333333;
     border: 1px solid #333333;
     border-radius: 5px;
-    /* padding: 5px; */
     width: 100px;
     height: 35px;
 }
@@ -376,8 +334,6 @@ nav ul li a:hover {
 
 
 .conbestseller {
-    /* padding-top: 100px; */
-    /* overflow-x: scroll; */
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -385,7 +341,6 @@ nav ul li a:hover {
 
 .headbestseller {
     word-spacing: 10px;
-    /* padding-left: 820px; */
     background-color: rgb(48, 47, 47);
     color: rgb(218, 215, 215);
     padding-top: 20px;
@@ -409,31 +364,8 @@ nav ul li a:hover {
 
 }
 
-/* 
-.roll1 {
-    padding-left: 150px;
-    padding-right: 250px;
-}
-
-
-.roll2 {
-    padding-right: 250px;
-}
-
-
-.roll3 {
-    padding-right: 250px;
-}
-
-
-.roll4 {
-    padding-right: 250px;
-} */
-
-
 footer {
     margin-top: 80px;
-    /* padding-bottom: 100px; */
     padding-bottom: 80px;
     background-color: rgb(37, 37, 37);
     color: white;
@@ -447,8 +379,6 @@ footer {
 
 
 .socialmedia {
-    /* padding-left: 850px; */
-    /* padding-top: 50px; */
     word-spacing: 20px;
     display: flex;
     justify-content: center;
@@ -457,7 +387,6 @@ footer {
 }
 
 .copyright {
-    /* padding-left: 830px; */
     word-spacing: 2px;
 }
 
@@ -552,7 +481,6 @@ footer {
 .testypeepsay {
     margin-left: 10px;
     margin-right: 10px;
-    /* margin-top: 10px; */
     margin-bottom: 20px;
     font-family: Helvetica, Arial, and Open Sans;
     font-weight: bold;
@@ -622,29 +550,11 @@ footer {
     font-size: 25px;
 }
 
-/* .answer{
-    max-height: 0;
-    overflow: hidden;
-} */
-
 .answer p {
     padding-top: 10px;
     line-height: 1.6;
     font-size: 15px;
 }
-
-/* .faq .active .answer{
-    max-height: 300px;
-} */
-
-
-/* .answer {
-    display: none;
-}
-
-.faq.active .answer {
-    display: block;
-} */
 
 .faq .answer {
     max-height: 0;

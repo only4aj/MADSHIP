@@ -1,90 +1,3 @@
-/* body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav ul li{
-    text-decoration: none;
-    padding: 50px;
-    padding-right: 20px;
-}
-
-ul{
-    list-style: none;
-    display: flex;    
-    padding-right: 50px;
-}
-
-#colship{
-    color: rgb(199, 174, 30);
-    padding-right: 100px;
-}
-
-.greycon{
-    background-color: rgb(15, 15, 15);
-    height: 50px;
-}
-
-
-nav ul li a{
-    text-decoration: none;
-    padding: 30px;
-    list-style-type: none;
-    color: rgb(231, 225, 225);
-    font-size: 25px;
-    font-weight: bold;
-    transition: 0.5s all;
-}
-
-
-h1{
-    color: rgb(184, 179, 179);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-left: 20px;
-    padding-right: 70px;
-    font-size: 40px;
-}
-
-#login{
-    
-    margin-left: 40px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: white;
-    border: 4px solid rgb(199, 174, 30);
-    border-radius: 15px;
-}
-
-#cartimg{
-    width: 50px;
-    height: 50px;
-    padding-right: 50px;
-    
-}
-
-#login a{
-    text-decoration: none;
-    color: rgb(199, 174, 30);
-}
-
-#login:hover{
-    background-color: rgb(212, 185, 33);
-    border-radius: 15px;
-}
-
-#login a:hover{
-    color: white;
-}
-
-nav ul li a:hover{
-    color: rgb(226, 199, 42);
-    transition: ease-in;
-} */
 * {
     margin: 0;
     padding: 0;
@@ -105,7 +18,6 @@ nav {
 
 nav ul li {
     text-decoration: none;
-    /* padding: 50px; */
     padding: 10px;
     padding-right: 20px;
 }
@@ -132,11 +44,9 @@ ul {
 
 nav ul li a {
     text-decoration: none;
-    /* padding: 30px; */
     padding: 5px;
     list-style-type: none;
     color: rgb(231, 225, 225);
-    /* font-size: 25px; */
     font-size: 22px;
     font-weight: bold;
     transition: 0.5s all;
@@ -157,8 +67,6 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     background-color: white;
-    /* border: 4px solid rgb(199, 174, 30); */
-    /* border-radius: 15px; */
     border: 3px solid rgb(199, 174, 30);
     border-radius: 13px;
 
@@ -173,8 +81,6 @@ h1 {
 
 #login:hover {
     background-color: rgb(212, 185, 33);
-    /* border-radius: 15px; */
-
 }
 
 #login a:hover {
@@ -221,8 +127,6 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     background-color: white;
-    /* border: 4px solid rgb(199, 174, 30); */
-    /* border-radius: 15px; */
     border: 3px solid rgb(199, 174, 30);
     border-radius: 13px;
 
@@ -237,8 +141,6 @@ h1 {
 
 #login:hover {
     background-color: rgb(212, 185, 33);
-    /* border-radius: 15px; */
-
 }
 
 #login a:hover {
