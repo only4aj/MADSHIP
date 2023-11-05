@@ -38,7 +38,7 @@
             </div>
             <div class="mainbtn">
                 <button class="shopbtn"><a href="#1">Shop Now</a></button>
-                <button class="signbtn"><a href="/login">Sign In</a></button>
+                <button class="signbtn"><a href="{% url 'about' %}">About Us</a></button>
             </div>
         </div>
         <div class="mainimage">
@@ -82,22 +82,22 @@
     </div>
     <div class="blockproducts">
         <div class="block1">
-            <a href=""><img src="{% static 'k1.png' %}" alt="" height="200px" width="180px"></a>
+            <a href="{% url 'store' %}"><img src="{% static 'k1.png' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Kurta</h2>
             <p class="blockpara1">Men's Fashion</p>
         </div>
         <div class="block2">
-            <a href=""><img src="{% static 'g2.png' %}" alt="" height="200px" width="180px"></a>
+            <a href="{% url 'store' %}"><img src="{% static 'g2.png' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Dress</h2>
             <p class="blockpara2">Women's Fashion</p>
         </div>
         <div class="block3">
-            <a href=""><img src="{% static 's4.webp' %}" alt="" height="200px" width="180px"></a>
+            <a href="{% url 'store' %}"><img src="{% static 's4.webp' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Shoes</h2>
             <p class="blockpara3">Footwears</p>
         </div>
         <div class="block4">
-            <a href=""><img src="{% static 'p6.png' %}" alt="" height="200px" width="180px"></a>
+            <a href="{% url 'store' %}"><img src="{% static 'p6.png' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Mobile</h2>
             <p class="blockpara4">Electronics</p>
         </div>
