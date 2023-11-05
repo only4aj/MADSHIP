@@ -55,7 +55,8 @@
                 <input class="midspc" type="tel" name="pincode" id="cstmrpincode">
             </div>
             <div class="btn" id="gotobtn">
-                <button id="rzp-button1" type="button" class="paybtn" onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>
+                <button id="rzp-button1" type="button" class="paybtn"
+                    onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>
             </div>
         </form>
     </div>
@@ -86,7 +87,16 @@
 
         var rzp1 = new Razorpay(options);
         rzp1.open();
+
     }
+
+    for (let i = 0; i < localStorage.length; i++) {
+        if (localStorage.key(i) === "rzp_checkout_anon_id" || localStorage.key(i) === "rzp_device_id") {
+            localStorage.removeItem(localStorage.key(i))
+            console.log(Number(localStorage.key(i)))
+        }
+    }
+
 
     function forward() {
         window.history.back()
