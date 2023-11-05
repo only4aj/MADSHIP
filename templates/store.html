@@ -15,12 +15,12 @@
     <nav class="greycon">
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'store' %}">Store</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
+        <button type="submit" id="login" class="login"><a href="{% url 'logout' %}">Logout</a></button>
         <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
         <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div>
 
