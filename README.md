@@ -1,2 +1,2 @@
-# MADSHIP
-cart page is complete
+# MADSHIP [Completion]
+Home Page Completed... [index.html]
