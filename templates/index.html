@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styls.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
@@ -83,28 +83,28 @@
     <div class="blockproducts">
         <div class="block1">
             <a href=""><img src="{% static 'kurta.jpg' %}" alt="" height="200px" width="200px"></a>
-            <h2>Kurta</h2>
+            <h2 class="sbph2">Kurta</h2>
             <p class="blockpara1">Men's Fashion</p>
         </div>
         <div class="block2">
             <a href=""><img src="{% static 'suit.jpg' %}" alt="" height="200px" width="200px"></a>
-            <h2>Formal</h2>
+            <h2 class="sbph2">Formal</h2>
             <p class="blockpara2">Women's Fashion</p>
         </div>
         <div class="block3">
             <a href=""><img src="{% static 'shoes.png' %}" alt="" height="200px" width="200px"></a>
-            <h2>Shoes</h2>
+            <h2 class="sbph2">Shoes</h2>
             <p class="blockpara3">Footwears</p>
         </div>
         <div class="block4">
             <a href=""><img src="{% static 'iphone14pro.png' %}" alt="" height="200px" width="200px"></a>
-            <h2>iPhone 14 Pro</h2>
+            <h2 class="sbph2">iPhone 14 Pro</h2>
             <p class="blockpara4">Electronics</p>
         </div>
 
     </div>
     <div class="vcsbtn">
-        <button class="viewbtn"><a href="/store">View All</a></button>
+        <button class="viewbtn"><a href="{% url "store" %}">View All</a></button>
     </div>
 
 
