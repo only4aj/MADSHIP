@@ -22,7 +22,7 @@
             </ul>
             <button type="submit" id="login" class="login"><a href="{% url 'login' %}">Sign In</a></button>
             <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
-            <!-- <div class="dotbox" id="dotbox"></div> -->
+            <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div>
 
         </nav>
     </header>
@@ -70,6 +70,6 @@
     </footer>
 </body>
 <script src="{% static 'javascript.js' %}"></script>
-<!-- <script src="{% static 'blinklight.js'%}"></script> -->
+<script src="{% static 'blinklight.js'%}"></script>
 
 </html>

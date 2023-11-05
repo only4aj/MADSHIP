@@ -656,3 +656,16 @@ footer {
     max-height: 500px;
     /* Adjust the max height to your preference */
 }
+
+.dotbox {
+    position: absolute;
+    right: 45px;
+    top: 5px;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    background: blue;
+    border-radius: 50%;
+}

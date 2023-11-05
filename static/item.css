@@ -333,3 +333,16 @@ nav ul li a:hover {
     color: green;
     font-size: 18px;
 }
+
+.dotbox {
+    position: absolute;
+    right: 45px;
+    top: 5px;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    background: blue;
+    border-radius: 50%;
+}
