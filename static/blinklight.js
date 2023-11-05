@@ -2,7 +2,13 @@
 function blink() {
   let dotbox = document.getElementById("dotbox");
 
-  if (localStorage.length >= 1) {
+  let num = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        if (Number(localStorage.key(i))) {
+            num++;
+        }
+    }
+  if (num >= 1) {
     dotbox.innerHTML = `<div class="dot" id="dot" style="width: 15px; height: 15px; background: blue; border-radius: 50%;"></div>`;
     dotbox.style = `position: absolute;
     right: 45px;

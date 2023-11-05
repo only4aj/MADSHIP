@@ -51,31 +51,26 @@
     let buy = document.getElementById('buy')
     let listbox = document.getElementById('listbox')
 
-    let numitem = localStorage.length;
+    let numitem = 0;
     let actualprice = 0, discntprice = 0;
 
-    if (numitem == 0) {
-        document.getElementById('buybox').innerHTML = `
-        <div class="mtcrt df" id="mtcrt">
-                    Empty Cart !
-                </div>`;
-    }
     for (let i = 0; i < localStorage.length; i++) {
         // console.log(localStorage.key(i))
-        let newdiv = document.createElement('div')
-        newdiv.className = 'box df';
-        newdiv.id = "" + localStorage.key(i) + ""
+        if (Number(localStorage.key(i))) {
+            let newdiv = document.createElement('div')
+            newdiv.className = 'box df';
+            newdiv.id = "" + localStorage.key(i) + ""
 
-        let imgg = JSON.parse(localStorage.getItem(localStorage.key(i))).image;
-        let titl = JSON.parse(localStorage.getItem(localStorage.key(i))).title;
-        let qtyitm = JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
-        let pric = JSON.parse(localStorage.getItem(localStorage.key(i))).price;
-        let act = JSON.parse(localStorage.getItem(localStorage.key(i))).actprc;
+            let imgg = JSON.parse(localStorage.getItem(localStorage.key(i))).image;
+            let titl = JSON.parse(localStorage.getItem(localStorage.key(i))).title;
+            let qtyitm = JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
+            let pric = JSON.parse(localStorage.getItem(localStorage.key(i))).price;
+            let act = JSON.parse(localStorage.getItem(localStorage.key(i))).actprc;
 
-        actualprice += act * qtyitm;
-        discntprice += pric * qtyitm;
+            actualprice += act * qtyitm;
+            discntprice += pric * qtyitm;
 
-        newdiv.innerHTML = `
+            newdiv.innerHTML = `
             <div class="image df" id="image"><img src="${imgg}" alt=""></div>
                         <div class="title df" id="title">${titl}</div>
                         <div class="qty df">Quantity : <p id="qty">${qtyitm}</p>
@@ -89,9 +84,9 @@
                             </div>
                             <div class="remove df" id="remove"><button onclick="deleteitem(${localStorage.key(i)})">Remove</button></div>
                             `;
-        listbox.append(newdiv)
-        if (localStorage.length > 0) {
-            document.getElementById("buybox").innerHTML = `
+            listbox.append(newdiv)
+            if (localStorage.length > 0) {
+                document.getElementById("buybox").innerHTML = `
                                 <div class="buy df" id="buy">
                                 <div class="prcdtl cmm df">Price Details</div>
                                             <div class="itmqty cmm df">Item Quantity :
@@ -108,9 +103,19 @@
                                             </div>
                                         </div>
                                 `;
+            }
+            numitem++;
+            document.getElementById("itmqty").innerText = numitem;
+            document.getElementById("ttlprcdis").innerText = discntprice + 50;
         }
-        document.getElementById("itmqty").innerText = numitem;
-        document.getElementById("ttlprcdis").innerText = discntprice + 50;
+    }
+
+    // Empty cart Function
+    if (numitem == 0) {
+        document.getElementById('buybox').innerHTML = `
+        <div class="mtcrt df" id="mtcrt">
+                    Empty Cart !
+                </div>`;
     }
 
     // Remove item function
@@ -165,7 +170,7 @@
         }
         window.location.reload()
     }
-    
+
 </script>
 <script src="{% static 'blinklight.js'%}"></script>
 
