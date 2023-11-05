@@ -30,15 +30,16 @@
             <img src="{% static 'madcontact.png' %}" alt="" class="imgsz">
             <div class="sidecontainer df">
                 <h1 class="query">Ask Your Queries</h1>
-                <form action="POST" class="df">
+                <form method="post" class="df">
+                    {% csrf_token %}
                     <div class="flexfields df">
                         <input class="field" type="text" name="firstname" id="firstname" placeholder="First Name">
                         <input class="field" type="text" name="lastname" id="lastname" placeholder="Last Name">
                     </div>
-                    <input class="email" type="email" name="email" id="email" placeholder="Email ID">
+                    <input class="email" type="email" name="usremail" id="usremail" placeholder="Email ID">
                     <textarea class="description" name="description" id="description"
                         placeholder="Write Your Description Here..."></textarea>
-                    <input class="subbtn" type="button" value="Submit">
+                    <button type="submit" class="subbtn">Submit</button>
                 </form>
             </div>
         </div>
