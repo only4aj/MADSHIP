@@ -544,6 +544,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #333333;
 }
 
 .question h3 {
@@ -554,6 +555,7 @@ footer {
     padding-top: 10px;
     line-height: 1.6;
     font-size: 15px;
+    color: grey;
 }
 
 .faq .answer {
