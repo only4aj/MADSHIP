@@ -186,7 +186,7 @@ def checkout(request):
         customerdata.save()
 
         id = customerdata.id
-        client = razorpay.Client(auth=("rzp_test_RibqbGc5MSrTVh", "Lg8xkSs4Nc44mPAv2Ht5Zggo"))
+        client = razorpay.Client(auth=("rzp_test_ICI3IgTUtrCbDN", "CqTKV9gjOUOqellCriobMF7b"))
         try:
             amount = 10000
             order = client.order.create({'amount': amount*100, 'currency': 'INR', 'payment_capture': 1})
