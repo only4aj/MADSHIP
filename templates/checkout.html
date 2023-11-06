@@ -64,7 +64,6 @@
     <button class="contbtn" onclick="forward()">← Continue Shopping</button>
 </body>
 <script>
-
     function initializePayment(orderId, amount) {
         var totalAmount = parseFloat(localStorage.getItem("totalAmount"));
         console.log(totalAmount)
@@ -96,7 +95,7 @@
     }
 
     // // Forward Button of Browser disabled
-    let num = 0;
+    num = 0;
     for (let i = 0; i < localStorage.length; i++) {
         if (Number(localStorage.key(i))) {
             num++;
