@@ -91,7 +91,7 @@
 
 
     // Direct Back Function
-    function forward() {
+    {% comment %} function forward() {
         window.history.back()
     }
 
@@ -113,7 +113,7 @@
     else {
         document.getElementById("gotobtn").innerHTML = `<button id="rzp-button1" type="button" class="paybtn"
                     onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>`;
-    }
+    } {% endcomment %}
 
     // // Amount Fetch from DataBase
     // if(localStorage.length > 0){
