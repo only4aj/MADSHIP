@@ -78,8 +78,13 @@
         var totalAmount = parseFloat(localStorage.getItem("totalAmount"));
         console.log(totalAmount)
         var options = {
+<<<<<<< HEAD
             key: "rzp_test_RibqbGc5MSrTVh",
             amount: price*100,
+=======
+            key: "rzp_test_lCl3lgTUtrCbDN",
+            amount: 100000,
+>>>>>>> cfffb430392d2158ce7a82725900bc8c56a01965
             currency: "INR",
             name: "MADSHIP",
             description: "Product Purchase",
@@ -100,7 +105,7 @@
 
 
     // Direct Back Function
-    function forward() {
+    {% comment %} function forward() {
         window.history.back()
     }
 
@@ -122,7 +127,7 @@
     else {
         document.getElementById("gotobtn").innerHTML = `<button id="rzp-button1" type="button" class="paybtn"
                     onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>`;
-    }
+    } {% endcomment %}
 
 </script>
 

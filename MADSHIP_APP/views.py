@@ -18,22 +18,22 @@ def home(request):
     return render(request, "index.html")
 
 @login_required(login_url='login')
-def items1(request):
+def mens_fashion(request):
     data = ProductItem.objects.all()
     return render(request,'items1.html',{'data':data})
 
 @login_required(login_url='login')
-def items2(request):
+def electronics(request):
     data = ProductItem.objects.all()
     return render(request,'items2.html',{'data':data})
 
 @login_required(login_url='login')
-def items3(request):
+def shoes(request):
     data = ProductItem.objects.all()
     return render(request,'items3.html',{'data':data})
 
 @login_required(login_url='login')
-def items4(request):
+def womens_fashion(request):
     data = ProductItem.objects.all()
     return render(request,'items4.html',{'data':data})
 
@@ -61,9 +61,9 @@ def about(request):
     return render(request, "about.html")
 
 
-@login_required(login_url='login_success')
-def contact(request):
-    return render(request, "contact.html")
+# @login_required(login_url='login_success')
+# def contact(request):
+#     return render(request, "contact.html")
 
 # def register(request):
 #     return render(request, "register.html")
@@ -147,7 +147,7 @@ def LogOut(request):
 
 
 @login_required(login_url='login')
-def product(request):
+def product_view(request):
     itemId = request.POST.get('id')
     data = ProductItem.objects.all()
     for i in data:
@@ -186,7 +186,7 @@ def checkout(request):
         customerdata.save()
 
         id = customerdata.id
-        client = razorpay.Client(auth=("rzp_test_RibqbGc5MSrTVh", "Lg8xkSs4Nc44mPAv2Ht5Zggo"))
+        client = razorpay.Client(auth=("rzp_test_ICI3IgTUtrCbDN", "CqTKV9gjOUOqellCriobMF7b"))
         try:
             amount = 10000
             order = client.order.create({'amount': amount*100, 'currency': 'INR', 'payment_capture': 1})

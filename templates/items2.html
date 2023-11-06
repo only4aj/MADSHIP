@@ -4,29 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>items - MADSHIP</title>
+    <title>Electronics - MADSHIP</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'item.css' %}">
+    <link rel="stylesheet" href="{% static 'items.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
 <body>
-    <header>
-        <nav class="greycon">
-            <h1>MAD<span id="colship">SHIP</span></h1>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'store' %}">Store</a></li>
-                <li><a href="{% url 'about' %}">About Us</a></li>
-                <li><a href="{% url 'contact' %}">Contact Us</a></li>
-            </ul>
-            <button type="submit" id="login" class="login"><a href="{% url 'logout' %}">Logout</a></button>
-            <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
-            <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div>
+    <nav class="greycon">
+        <h1>MAD<span id="colship">SHIP</span></h1>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'store' %}">Store</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+        <ul>
+            <li>
+                <a href="{% url 'items2' %}" class="profont">{{user.username}} <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="profile">
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </li>
 
-        </nav>
-    </header>
+        </ul>
+        {% comment %} <button type="submit" id="login" class="login"><a href="{% url 'logout' %}">Logout</a></button> {% endcomment %}
+        <a href="{% url 'cart' %}"><img src="{% static 'shopcart.png' %}" alt="" id="cartimg"></a>
+        <div class="dotbox" id="dotbox"><div class="dot" id="dot"></div></div>
+
+    </nav>
+
     <main>
         <div class="container">
             <div class="row df">

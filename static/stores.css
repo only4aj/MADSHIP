@@ -38,7 +38,7 @@ ul {
 
 #colship {
     color: rgb(199, 174, 30);
-    padding-right: 100px;
+    padding-right: 70px;
 }
 
 .greycon {
@@ -297,4 +297,33 @@ footer {
     height: 15px;
     background: blue;
     border-radius: 50%;
+}
+
+
+ul li ul.profile li{
+    display: block;
+}
+
+
+ul li ul.profile{
+    margin-top: 15px;
+    width: 100%;
+    background: #333333;
+    /* background-size: 100px 100px; */
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+
+.profont{
+    font-size: 20px;
+}
+
+
+
+
+
+ul li:hover ul.profile{
+    display: block;
 }
