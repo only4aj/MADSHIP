@@ -1,10 +1,11 @@
 from django.shortcuts import render,HttpResponse, redirect
 from django.http import JsonResponse
 from .models import Customer,ProductItem,customerdetail,ContactForm
-from django.contrib.auth import authenticate,login,logout
+# from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.sessions.models import Session
-from django.contrib import messages
+from django.contrib import messages, auth
+from django.contrib.auth.models import User
 import razorpay
 from django.conf import settings
 # from .models import Customer
@@ -16,34 +17,38 @@ def home(request):
     user_name = request.session.get('user_name')
     return render(request, "index.html")
 
+@login_required(login_url='login')
 def items1(request):
     data = ProductItem.objects.all()
     return render(request,'items1.html',{'data':data})
 
+@login_required(login_url='login')
 def items2(request):
     data = ProductItem.objects.all()
     return render(request,'items2.html',{'data':data})
 
+@login_required(login_url='login')
 def items3(request):
     data = ProductItem.objects.all()
     return render(request,'items3.html',{'data':data})
 
+@login_required(login_url='login')
 def items4(request):
     data = ProductItem.objects.all()
     return render(request,'items4.html',{'data':data})
 
-def login(request):
-    username = str(request.POST.get('username'))
-    passwrd = str(request.POST.get('pass'))
-    if username == '' or passwrd == '':
-        return render(request,'login.html',{'error':''})
-    else:
-        # getdata = Customer.objects.filter()
-        getdata = Customer.objects.all()
-        for data in getdata:
-            if data.username == username and data.password == passwrd:
-                return render(request, "index.html")
-        return render(request,'login.html',{'error':'Invalid Username or Password'})
+# def login(request):
+#     username = str(request.POST.get('username'))
+#     passwrd = str(request.POST.get('pass'))
+#     if username == '' or passwrd == '':
+#         return render(request,'login.html',{'error':''})
+#     else:
+#         # getdata = Customer.objects.filter()
+#         getdata = Customer.objects.all()
+#         for data in getdata:
+#             if data.username == username and data.password == passwrd:
+#                 return render(request, "index.html")
+#         return render(request,'login.html',{'error':'Invalid Username or Password'})
 
 
 @login_required(login_url='login')
@@ -60,11 +65,11 @@ def about(request):
 def contact(request):
     return render(request, "contact.html")
 
-def register(request):
-    return render(request, "register.html")
+# def register(request):
+#     return render(request, "register.html")
 
-def login(request):
-    return render(request, "login.html",{'error':''})
+# def login(request):
+#     return render(request, "login.html",{'error':''})
 
 
 @login_required(login_url='login')
@@ -75,36 +80,69 @@ def term(request):
     return render(request,'terms.html')
 
 
-def verification(request):
+def register(request):
     if request.method == 'POST':
         usern = request.POST.get('username')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         passwrd = request.POST.get('pass')
 
-        if usern == '' or email == '' or phone == '' or passwrd == '':
-            return render(request, "register.html")
 
-        # Create a new customer account
-        data = Customer(username=usern, PNumber=phone, email=email, password=passwrd)
-        data.save()
+        if (usern == '' or email == '' or phone == '' or passwrd == ''):
+            return render(request, 'register.html')
 
-        # Authenticate the new user
-        user = authenticate(request, username=usern, password=passwrd)
+        else:
+            user = User.objects.create_user(username=usern, email=email, password=passwrd)
+        
+            user.save()
+            print("user created!")
+            return redirect('/')
+
+    #     if usern == '' or email == '' or phone == '' or passwrd == '':
+    #         return render(request, "register.html")
+
+    #     # Create a new customer account
+    #     data = Customer(username=usern, PNumber=phone, email=email, password=passwrd)
+    #     data.save()
+
+    #     return render(request, 'login.html')
+
+    else:
+        return render(request, 'register.html')
+
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('pass')
+
+        user = auth.authenticate(username=username, password=password)
 
         if user is not None:
-            login(request, user)
-            # Redirect to the 'home' page upon successful login
+            auth.login(request, user)
             return redirect('home')
+        
         else:
-            messages.error(request, 'Invalid credentials')
-    
-    return render(request, 'login.html')
+            messages.info(request, "invalid credentials")
+            return redirect("/")
+
+        # if username == '' or password == '':
+        #     return render(request, 'login.html', {'error': 'Please enter both username and password.'})
+
+        # user = authenticate(request, username=username, password=password)
+        # if user is not None:
+        #     login(request, user)
+        #     return redirect('home')
+        # else:
+        #     messages.error(request, 'Invalid credentials')
+
+    else:
+        return render(request, 'login.html')
 
 
 def LogOut(request):
-    logout(request)
-    return redirect('login')
+    auth.logout(request)
+    return redirect("/")
 
 
 

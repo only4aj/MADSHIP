@@ -16,7 +16,7 @@
         <div class="flexbox">
             <div class="box">
                 <h1 class="heading">Login @ <span class="colgold">MADSHIP</span></h1>
-                <form action="{% url 'verification'%}" method="post">
+                <form action="{% url 'login'%}" method="post">
                     {% csrf_token %}
                     <div>
                         <h3>Username</h3>
@@ -29,7 +29,7 @@
                     <div class="error" id="error">{{error}}</div>
                     <div class="lgbtn">
                         <!-- <a href="" class="lbtn"><input type="button" value="Login" class="submitbtn"></a> -->
-                        <button type="submit">Login</button>
+                        <button type="submit" class="submitbtn">Login</button>
                     </div>
                     <div class="reghere">
                         <span>New User? <a href="{% url 'register' %}">Register Here</a></span>
