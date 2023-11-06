@@ -61,9 +61,9 @@ def about(request):
     return render(request, "about.html")
 
 
-@login_required(login_url='login_success')
-def contact(request):
-    return render(request, "contact.html")
+# @login_required(login_url='login_success')
+# def contact(request):
+#     return render(request, "contact.html")
 
 # def register(request):
 #     return render(request, "register.html")
