@@ -55,36 +55,58 @@
                 <input class="midspc" type="tel" name="pincode" id="cstmrpincode">
             </div>
             <div class="btn" id="gotobtn">
+                <!-- <a href="{% url 'checkout' %}"><button id="rzp-button1" type="button" class="paybtn"
+                    onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button></a> -->
                 <button id="rzp-button1" type="button" class="paybtn"
                     onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>
             </div>
         </form>
     </div>
-    <!-- <button class="contbtn" onclick="forward()"><a href="{% url 'cart' %}">← Continue Shopping</a></button> -->
     <button class="contbtn" onclick="forward()">← Continue Shopping</button>
 </body>
 <script>
-    
-    // Amount Fetch from DataBase
-    if(localStorage.length > 0){
-        let price = 50
-        for(let i=0;i<localStorage.length;i++){
-            let id = localStorage.key(i)
-            price += JSON.parse(localStorage.getItem(id)).price*JSON.parse(localStorage.getItem(id)).quantity
+
+    // num is Number of item in local storage
+    num = 0;
+    for (let i = 0; i < localStorage.length; i++) {
+        if (Number(localStorage.key(i))) {
+            num++;
         }
-        console.log(price)
-    } 
+    }
+
+    // // Forward Button of Browser disabled
+    if (num == 0) {
+        window.history.back();
+    }
+
+    // // Place Order button remove or add
+    if (num == 0) {
+        document.getElementById("gotobtn").remove()
+    }
+    else {
+        document.getElementById("gotobtn").innerHTML = `<button id="rzp-button1" type="button" class="paybtn"
+                    onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>`;
+    }
+
+    // Payment Function
     function initializePayment(orderId, amount) {
-        var totalAmount = parseFloat(localStorage.getItem("totalAmount"));
-        console.log(totalAmount)
+        
+        // Amount Fetch from DataBase
+        let price = 50
+        if (num > 0) {
+            for (let i = 0; i < localStorage.length; i++) {
+                if (Number(localStorage.key(i))) {
+                    let id = localStorage.key(i)
+                    price += JSON.parse(localStorage.getItem(id)).price * JSON.parse(localStorage.getItem(id)).quantity
+                }
+            }
+            console.log(price)
+        }
+
+        document.getElementById("amount").value = price;
         var options = {
-<<<<<<< HEAD
-            key: "rzp_test_RibqbGc5MSrTVh",
-            amount: price*100,
-=======
             key: "rzp_test_lCl3lgTUtrCbDN",
-            amount: 100000,
->>>>>>> cfffb430392d2158ce7a82725900bc8c56a01965
+            amount: price * 100,
             currency: "INR",
             name: "MADSHIP",
             description: "Product Purchase",
@@ -101,33 +123,15 @@
 
         var rzp1 = new Razorpay(options);
         rzp1.open();
+
+        document.getElementById("rzp-button1").type = 'submit'
     }
 
 
     // Direct Back Function
-    {% comment %} function forward() {
+    function forward() {
         window.history.back()
     }
-
-    // // Forward Button of Browser disabled
-    num = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-        if (Number(localStorage.key(i))) {
-            num++;
-        }
-    }
-    if (num == 0) {
-        window.history.back();
-    }
-
-    // // Place Order button remove or add
-    if (num == 0) {
-        document.getElementById("gotobtn").remove()
-    }
-    else {
-        document.getElementById("gotobtn").innerHTML = `<button id="rzp-button1" type="button" class="paybtn"
-                    onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>`;
-    } {% endcomment %}
 
 </script>
 

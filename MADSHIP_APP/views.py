@@ -176,19 +176,20 @@ def checkout(request):
         cstmrname = request.POST.get('name', '')
         cstmremail = request.POST.get('mail', '')
         cstmraddress = request.POST.get('address', '')
+        amount = request.POST.get('amount', '')
         cstmrphone = request.POST.get('mobile', '')
         cstmrpincode = request.POST.get('pincode', '')
 
         if not (cstmrname and cstmremail and cstmraddress and cstmrphone and cstmrpincode):
             return render(request, 'checkout.html')
 
-        customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=cstmrphone, pincode=cstmrpincode)
+        customerdata = customerdetail(name=cstmrname, mail=cstmremail, address=cstmraddress, mobile=cstmrphone, pincode=cstmrpincode,amount=amount)
         customerdata.save()
 
         id = customerdata.id
         client = razorpay.Client(auth=("rzp_test_ICI3IgTUtrCbDN", "CqTKV9gjOUOqellCriobMF7b"))
         try:
-            amount = 10000
+            # amount = 10000
             order = client.order.create({'amount': amount*100, 'currency': 'INR', 'payment_capture': 1})
         except Exception as e:
             return JsonResponse({'message': 'Error creating Razorpay order'})
