@@ -55,9 +55,7 @@
                 <input class="midspc" type="tel" name="pincode" id="cstmrpincode">
             </div>
             <div class="btn" id="gotobtn">
-                <!-- <a href="{% url 'checkout' %}"><button id="rzp-button1" type="button" class="paybtn"
-                    onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button></a> -->
-                <button id="rzp-button1" type="button" class="paybtn"
+                <button id="rzp-button1" type="submit" class="paybtn"
                     onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>
             </div>
         </form>
@@ -88,8 +86,15 @@
                     onclick="initializePayment('{{ order_id }}', '{{ amount }}')">Place Order →</button>`;
     }
 
+function initializePayment(orderId,amount){
+    // document.getElementById("rzp-button1").type = 'button'
+    setTimeout(function(){
+        initializePayment_(orderId, amount)
+    },300)
+}
+
     // Payment Function
-    function initializePayment(orderId, amount) {
+    function initializePayment_(orderId, amount) {
         
         // Amount Fetch from DataBase
         let price = 50
@@ -124,7 +129,6 @@
         var rzp1 = new Razorpay(options);
         rzp1.open();
 
-        document.getElementById("rzp-button1").type = 'submit'
     }
 
 
