@@ -10,7 +10,7 @@ class Customer(models.Model):
 
     def __str__(self) -> str:
         return self.username
-
+    
 class ProductItem(models.Model):
     brand = models.CharField(max_length=20)
     title = models.CharField(max_length=500)
