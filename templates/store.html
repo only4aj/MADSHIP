@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
     <link rel="stylesheet" href="{% static 'stores.css' %}">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
@@ -25,7 +26,7 @@
             <li>
                 <a href="{% url 'store' %}" class="profont">{{user.username}} <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="profile">
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}" onclick="window.location.reload()">Logout</a></li>
                 </ul>
             </li>
 

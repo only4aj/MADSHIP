@@ -9,11 +9,11 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     background: transparent;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background: transparent;
     color: white;
 }
@@ -64,16 +64,13 @@ nav ul li a {
 h1 {
     color: rgb(184, 179, 179);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-left: 20px;
-    padding-right: 70px;
+    padding-left: 0px;
     font-size: 30px;
 }
 
-.h1head{
+.h1head {
     color: rgb(78, 78, 78);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 20px;
-    margin-right: 70px;
     margin-bottom: 10px;
     font-size: 50px;
 }
@@ -130,44 +127,44 @@ nav ul li a:hover {
     transition: ease-in;
 }
 
-.head{
+.head {
     margin-top: 30px;
-    margin-left: 150px;
+    margin-left: 145px;
 }
 
-.flexcol{
+.flexcol {
     display: flex;
     flex-direction: column;
     margin-left: 200px;
 }
 
-.flexfields{
+.flexfields {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
 }
 
-.flexyfield{
+.flexyfield {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
 }
 
-.addr{
+.addr {
     width: 600px;
     border: 2px solid rgb(151, 149, 149);
     border-radius: 10px;
     padding-left: 10px;
 }
 
-.fntsz{
+.fntsz {
     font-size: 25px;
     font-weight: bold;
     color: rgb(151, 149, 149);
     margin-right: 10px;
 }
 
-.midspc{
+.midspc {
     margin-right: 20px;
     width: 300px;
     border: 2px solid rgb(151, 149, 149);
@@ -175,7 +172,7 @@ nav ul li a:hover {
     padding-left: 10px;
 }
 
-.paybtn{
+.paybtn {
     background-color: rgb(236, 207, 38);
     color: rgb(78, 78, 78);
     position: absolute;
@@ -190,7 +187,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.contbtn{
+.contbtn {
     background-color: rgb(230, 228, 228);
     margin-left: 200px;
     margin-top: 98px;
@@ -200,4 +197,15 @@ nav ul li a:hover {
     border: 2px solid rgb(230, 228, 228);
     border-radius: 5px;
     cursor: pointer;
+}
+
+.addsummry {
+    margin-top: 50px;
+}
+
+.qty {
+    width: 20px;
+    border-radius: 50%;
+    position: relative;
+    left: 300px;
 }

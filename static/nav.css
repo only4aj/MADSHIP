@@ -1,0 +1,82 @@
+@media (min-width:992px) and (max-width:1159px) {
+    nav ul li {
+        padding: 0;
+        padding-right: 10px;
+    }
+
+    .headning {
+        font-size: 22px;
+    }
+
+    .madship {
+        font-size: 23px;
+    }
+    
+    footer{
+        padding-bottom: 60px;
+        margin-top: 70px;
+        gap: 18px;
+    }
+    .socialmedia{
+        gap: 20px;
+    }
+}
+
+/* Small Tablets */
+@media (max-width:991px) {
+    nav ul li {
+        padding: 0;
+        padding-right: 7px;
+    }
+
+    nav ul li a {
+        padding: 5px;
+        font-size: 19px;
+    }
+
+    h1 {
+        font-size: 25px;
+        padding-right: 0;
+        padding-left: 15px;
+    }
+
+    #colship {
+        padding-right: 25px;
+    }
+
+    #cartimg {
+        width: 45px;
+        height: 45px;
+    }
+    
+    footer{
+        padding-bottom: 50px;
+        margin-top: 50px;
+        gap: 15px;
+    }
+    .socialmedia{
+        gap: 20px;
+    }
+}
+
+@media (max-width:767px) {
+    nav ul li {
+        padding: 0;
+        padding-right: 7px;
+    }
+
+    nav ul li a {
+        padding: 5px;
+        font-size: 19px;
+    }
+
+    h1 {
+        font-size: 25px;
+        padding-right: 0;
+        padding-left: 15px;
+    }
+
+    #colship {
+        padding-right: 25px;
+    }
+}

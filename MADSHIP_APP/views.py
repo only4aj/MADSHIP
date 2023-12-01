@@ -176,10 +176,11 @@ def checkout(request):
         cstmrname = request.POST.get('name', '')
         cstmremail = request.POST.get('mail', '')
         cstmraddress = request.POST.get('address', '')
-        amount = request.POST.get('amount', '')
+        amount = request.POST.get('amount', '0')
         cstmrphone = request.POST.get('mobile', '')
         cstmrpincode = request.POST.get('pincode', '')
-
+        
+        print(amount)
         if not (cstmrname and cstmremail and cstmraddress and cstmrphone and cstmrpincode):
             return render(request, 'checkout.html')
 
@@ -190,7 +191,7 @@ def checkout(request):
         client = razorpay.Client(auth=("rzp_test_lCl3lgTUtrCbDN", "CqTKV9gjOUOqellCriobMF7b"))
         try:
             # amount = 10000
-            order = client.order.create({'amount': amount*100, 'currency': 'INR', 'payment_capture': 1})
+            order = client.order.create({'amount': int(amount)*100, 'currency': 'INR', 'payment_capture': 1})
         except Exception as e:
             return JsonResponse({'message': 'Error creating Razorpay order'})
 
@@ -220,4 +221,3 @@ def contact(request):
             clear_form = True
 
     return render(request, 'contact.html', {'message': message, 'clear_form': clear_form})
-

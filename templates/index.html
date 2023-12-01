@@ -12,20 +12,21 @@
     <link rel="icon" href="{% static 'MADICON.png' %}" type="image/png">
 </head>
 
+<!-- <body onresize="resize()"> -->
 <body>
     <nav class="greycon">
         <h1>MAD<span id="colship">SHIP</span></h1>
-        <ul>
+        <ul id="navbaar">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'store' %}">Store</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
         </ul>
-        <ul>
+        <ul id="username">
             <li>
                 <a href="{% url 'home' %}" class="profont">{{user.username}} <i class="fa-solid fa-chevron-down"></i></a>
-                <ul class="profile">
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                <ul class="profile" id="profile">
+                    <li><a href="{% url 'logout' %}" onclick="location.reload()">Logout</a></li>
                 </ul>
             </li>
 
@@ -41,7 +42,7 @@
         </div>
         <div class="mainbody">
             <div class="mainhead">
-                <h1 class="headning">Shop <span class="at">@</span> <span class="madship">MADSHIP</span></h1>
+                <h1 class="headning">Shop<span class="at">@</span> <span class="madship">MADSHIP</span></h1>
                 <h3 class="headning3">DISCOUNT | SHOPPING | COUPONS</h3>
                 <p class="paraning">Whatever you’ve got in mind, we’ve got inside.</p>
             </div>
@@ -90,22 +91,22 @@
         <h1 class="headbycat"><span class="shopby">SHOP</span> BY <span class="goldcat">CATEGORY</span></h1>
     </div>
     <div class="blockproducts">
-        <div class="block1">
+        <div class="block1 block">
             <a href="{% url 'store' %}"><img src="{% static 'k1.png' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Kurta</h2>
             <p class="blockpara1">Men's Fashion</p>
         </div>
-        <div class="block2">
+        <div class="block2 block">
             <a href="{% url 'store' %}"><img src="{% static 'g2.png' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Dress</h2>
             <p class="blockpara2">Women's Fashion</p>
         </div>
-        <div class="block3">
+        <div class="block3 block">
             <a href="{% url 'store' %}"><img src="{% static 's4.webp' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Shoes</h2>
             <p class="blockpara3">Footwears</p>
         </div>
-        <div class="block4">
+        <div class="block4 block">
             <a href="{% url 'store' %}"><img src="{% static 'p6.png' %}" alt="" height="200px" width="180px"></a>
             <h2 class="sbph2">Mobile</h2>
             <p class="blockpara4">Electronics</p>
@@ -113,7 +114,7 @@
 
     </div>
     <div class="vcsbtn">
-        <button class="viewbtn"><a href="{% url "store" %}">View All</a></button>
+        <button class="viewbtn"><a href="{% url 'store' %}">View All</a></button>
     </div>
 
 
@@ -199,7 +200,7 @@
         <div class="faq" onclick="change('up1')">
             <div class="question">
                 <h3>How long does shipping take ?</h3>
-                <i class="fa-solid fa-chevron-down roop" id="up1"></i>
+                <i class="fa-solid fa-chevron-down " id="up1"></i>
             </div>
             <div class="answer">
                 <p>Shipping typically takes 2-3 working days, although delivery times may vary depending on your location. Rest assured, we make every effort to get your order to you as quickly as possible.</p>

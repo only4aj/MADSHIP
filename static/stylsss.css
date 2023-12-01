@@ -204,6 +204,7 @@ nav ul li a:hover {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     color: rgb(0, 0, 0);
 }
 
@@ -270,6 +271,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     margin-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 
@@ -578,7 +580,7 @@ footer {
 .dot{
     width: 15px;
     height: 15px;
-    background: blue;
+    background: rgb(250, 47, 47);
     border-radius: 50%;
 }
 
@@ -603,10 +605,316 @@ ul li ul.profile{
     font-size: 20px;
 }
 
-
-
-
-
 ul li:hover ul.profile{
     display: block;
+}
+
+@media screen and (max-width:1080px) {
+    
+}
+
+
+@media screen and (max-width:1160px) {
+    
+}
+
+/* Mobile */
+@media (max-width:480px) {
+    
+}
+
+/* Extra Small Device */
+/* @media (min-width:481px) and (max-width:767px) { */
+@media (max-width:767px) {
+    nav ul li{
+        padding: 0;
+        padding-right: 7px;
+    }
+    nav ul li a{
+        padding: 5px;
+        font-size: 19px;
+    }
+    h1{
+        font-size: 25px;
+        padding-right: 0;
+        padding-left: 15px;
+    }
+    #colship{
+        padding-right: 25px;
+    }
+    #cartimg{
+        width: 45px;
+        height: 45px;
+    }
+    .sideimage img{
+        width: 150px;
+    }
+    .headning{
+        font-size: 30px;
+    }
+    .madship{
+        font-size: 31px;
+    }
+    .headning3{
+        margin-left: 0px;
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    .paraning{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .mainimage{
+        width: 300px;
+        margin-left: 0px;
+    }
+    .mainimage img{
+        width: 300px;
+    }
+    .mainhead{
+        padding-left: 0px;
+    }
+    .mainbtn{
+        margin-left: 15px;
+        margin-top: 0px;
+    }
+    .shopbtn {
+        font-size: 20px;
+    }
+    .signbtn{
+        font-size: 20px;
+        margin-left: 60px;
+    }
+}
+
+/* Small Tablets */
+@media  (max-width:991px) {
+    nav ul li{
+        padding: 0;
+        padding-right: 7px;
+    }
+    nav ul li a{
+        padding: 5px;
+        font-size: 19px;
+    }
+    h1{
+        font-size: 25px;
+        padding-right: 0;
+        padding-left: 15px;
+    }
+    #colship{
+        padding-right: 25px;
+    }
+    #cartimg{
+        width: 45px;
+        height: 45px;
+    }
+    .sideimage img{
+        width: 150px;
+    }
+    .headning{
+        font-size: 30px;
+    }
+    .madship{
+        font-size: 31px;
+    }
+    .headning3{
+        margin-left: 0px;
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    .paraning{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .mainimage{
+        width: 300px;
+        margin-left: 0px;
+    }
+    .mainimage img{
+        width: 300px;
+    }
+    .mainhead{
+        padding-left: 0px;
+    }
+    .mainbtn{
+        margin-left: 15px;
+        margin-top: 0px;
+    }
+    .shopbtn {
+        font-size: 20px;
+    }
+    .signbtn{
+        font-size: 20px;
+        margin-left: 60px;
+    }
+    .fnt{
+        font-size: 15px;
+        margin: 10px 0px;
+    }
+    .advertise{
+        justify-content: space-evenly;
+    }
+
+    .headbycat{
+        font-size: 30px;
+        word-spacing: 5px;
+    }
+    .block a img{
+        width: 150px;
+        height: 180px;
+    }
+    .blockproducts{
+        margin-bottom: 20px;
+    }
+    .vcsbtn{
+        margin-bottom: 20px;
+    }
+
+    .testysep{
+        width: 754px;
+        margin-left: 0;
+    }
+    .testyendsep{
+        width: 754px;
+        margin-left: 0;
+    }
+    .testyhead{
+        margin-left: 30px;
+        font-size: 30px;
+    }
+    .testypara{
+        margin-left: 50px;
+    }
+    .testimonial{
+        width: 225px;
+        border-top-width: 25px;
+        font-size: 15.3px;
+    }
+    .flextesty{
+        margin-left: 15px;
+        margin-top: 40px;
+        width: 745px;
+        justify-content: space-evenly;
+    }
+    .testyquote{
+        font-size: 40px;
+    }
+    .testypeepsay{
+        margin-bottom: 10px;
+    }
+    .title{
+        font-size: 55px;
+        margin-top: 35px;
+    }
+    .question h3{
+        font-size: 20px;
+    }
+    .faq{
+        width: 630px;
+    }
+
+    footer{
+        padding-bottom: 50px;
+        margin-top: 50px;
+        gap: 15px;
+    }
+    .socialmedia{
+        gap: 20px;
+    }
+}
+
+/* Large tablets/Laptops */
+/* @media (min-width:992px) and (max-width:1199px) { */
+@media (min-width:992px) and (max-width:1159px) {
+    nav ul li{
+        padding: 0;
+        padding-right: 10px;
+    }
+    .headning{
+        font-size: 22px;
+    }
+    .madship{
+        font-size: 23px;
+    }
+    .headning3{
+        margin-left: 0px;
+        font-size: 15px;
+    }
+    .paraning{
+        font-size: 15px;
+        margin-top: 18px;
+    }
+    .mainimage{
+        margin-left: 40px;
+    }
+    .mainhead{
+        padding-left: 30px;
+    }
+    .mainbtn{
+        margin-left: 15px;
+        margin-top: 0px;
+    }
+    .shopbtn {
+        font-size: 19px;
+    }
+    .signbtn{
+        font-size: 19px;
+    }
+    .headbycat{
+        font-size: 45px;
+    }
+    .testyhead{
+        margin-left: 60px;
+        font-size: 34px;
+    }
+    .testypara{
+        margin-left: 50px;
+    }
+    .flextesty{
+        margin-left: 40px;
+        margin-top: 60px;
+    }
+    .testimonial{
+        width: 240px;
+        border-top-width: 40px;
+    }
+    .testyquote{
+        font-size: 40px;
+    }
+    .testypeepsay{
+        margin-bottom: 10px;
+    }
+    .testysep{
+        width: 980px;
+        margin-left: 0;
+    }
+    .testyendsep{
+        width: 980px;
+        margin-left: 0;
+    }
+    .title{
+        font-size: 65px;
+    }
+    .question h3{
+        font-size: 20px;
+    }
+    footer{
+        padding-bottom: 60px;
+        margin-top: 70px;
+        gap: 18px;
+    }
+    .socialmedia{
+        gap: 20px;
+    }
+}
+
+/* Desktops */
+@media (min-width:1160px) and (max-width:1919px) {
+    
+}
+
+/* Extra large screens */
+@media (min-width:1920px) {
+    
 }

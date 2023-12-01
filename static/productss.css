@@ -129,7 +129,7 @@ nav ul li a:hover {
 .dot{
     width: 15px;
     height: 15px;
-    background: blue;
+    background: rgb(250, 47, 47);
     border-radius: 50%;
 }
 
@@ -291,10 +291,10 @@ ul li ul.profile{
     font-size: 20px;
 }
 
-
-
-
-
 ul li:hover ul.profile{
     display: block;
+}
+
+.btnbox{
+    margin-left: 10px;
 }

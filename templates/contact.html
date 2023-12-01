@@ -26,7 +26,7 @@
             <li>
                 <a href="{% url 'contact' %}" class="profont">{{user.username}} <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="profile">
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}" onclick="location.reload(true)">Logout</a></li>
                 </ul>
             </li>
 

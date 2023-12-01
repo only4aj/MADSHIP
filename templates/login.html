@@ -20,11 +20,11 @@
                     {% csrf_token %}
                     <div>
                         <h3>Username</h3>
-                        <input type="text" name="username" id="uname" class="text">
+                        <input type="text" name="username" id="uname" class="text" required>
                     </div>
                     <div>
                         <h3>Password</h3>
-                        <input type="password" name="pass" id="password" class="password text">
+                        <input type="password" name="pass" id="password" class="password text" required>
                     </div>
                     <div class="error" id="error">{{error}}</div>
                     <div class="lgbtn">

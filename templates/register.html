@@ -21,22 +21,22 @@
                     {% csrf_token %}
                     <div>
                         <h3>Username</h3>
-                        <input type="text" name="username" id="username" class="text">
+                        <input type="text" name="username" id="username" class="text" required>
                     </div>
                     <div>
                         <h3>Email Address</h3>
-                        <input type="email" name="email" id="email" class="email text">
+                        <input type="email" name="email" id="email" class="email text" required>
                     </div>
                     <div>
                         <h3>Phone Number</h3>
-                        <input type="tel" name="phone" id="phone" class="phone text">
+                        <input type="tel" name="phone" id="phone" class="phone text" required>
                     </div>
                     <div>
                         <h3>Password</h3>
-                        <input type="password" name="pass" id="pass" class="password text">
+                        <input type="password" name="pass" id="pass" class="password text" required>
                     </div>
                     <div class="checkbox">
-                        <input type="checkbox" name="accept" id="accept">
+                        <input type="checkbox" name="accept" id="accept" required>
                         <span>I have read the <a href="{% url 'term' %}">Terms & Conditions</a></span>
                     </div>
                     <div>

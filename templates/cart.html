@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="greycon">
+    <nav class="greycon" id="greycon">
         <h1>MAD<span id="colship">SHIP</span></h1>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -25,7 +25,7 @@
             <li>
                 <a href="{% url 'cart' %}" class="profont">{{user.username}} <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="profile">
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'logout' %}" onclick="window.location.reload()">Logout</a></li>
                 </ul>
             </li>
 
@@ -37,7 +37,7 @@
     </nav>
     <main>
         <div class="container df">
-            <div class="heading df">
+            <div class="heading df" id="heading">
                 <p class="text df">My Cart</p>
             </div>
             <div class="mainbox df">
@@ -45,6 +45,7 @@
                     <div class="b"></div>
                 </div>
                 <div class="buybox" id="buybox">
+                    
                 </div>
             </div>
         </div>
@@ -79,15 +80,16 @@
             newdiv.innerHTML = `
             <div class="image df" id="image"><img src="${imgg}" alt=""></div>
                         <div class="title df" id="title">${titl}</div>
-                        <div class="qty df">Quantity : <p id="qty">${qtyitm}</p>
+                        <div class="qty df" id="qtynum"><span id="qtyamt">Quantity : </span><p id="qty">${qtyitm}</p>
                             <div class="arrow df">
-                                <img src="{%static 'up.png'%}" alt="" onclick="qtychangeup(${localStorage.key(i)})">
-                                <img src="{%static 'down.png'%}" alt="" onclick="qtychangedown(${localStorage.key(i)})">
+                                <img src="{%static 'up.png'%}" alt="" id="btn1" onclick="qtychangeup(${localStorage.key(i)})">
+                                <img src="{%static 'down.png'%}" alt="" id="btn1" onclick="qtychangedown(${localStorage.key(i)})">
                             </div>
                         </div>
-                        <div class="amount df">₹
+                        <div class="amount df" id='amtqty'>₹
                             <p id="amount">${pric * qtyitm}</p>
                             </div>
+                            <input type="hidden" name="amount" id="amount" value="${pric * qtyitm}">
                             <div class="remove df" id="remove"><button onclick="deleteitem(${localStorage.key(i)})">Remove</button></div>
                             `;
             listbox.append(newdiv)
@@ -105,7 +107,7 @@
                                                 <div class="df">₹<p id="ttlprcdis">0</p>
                                                 </div>
                                             </div>
-                                            <div class="plcord cmm df"><button id="plcord"><a href="{% url 'checkout' %}" class ="df">Checkout</a></button>
+                                            <div class="plcord cmm df" id="plcorder"><button id="plcord"><a href="{% url 'checkout' %}" class ="df">Checkout</a></button>
                                             </div>
                                         </div>
                                 `;

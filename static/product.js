@@ -61,7 +61,7 @@ function blink() {
 
   if (num > 0) {
     let dot = document.getElementById("dot");
-    dot.style = `box-shadow: 0 0 5px rgb(179, 179, 244), 0 0 8px #5858f7, 0 0 10px blue, 0 0 15px darkblue,0 0 20px rgb(154, 161, 248);`;
+    dot.style = `box-shadow: 0 0 5px rgb(244, 179, 179), 0 0 8px #f75858, 0 0 10px red, 0 0 15px darkred,0 0 20px rgb(248, 154, 154);`;
     setTimeout(function () {
       dot.style = `box-shadow: none;`;
     }, 100);

@@ -9,11 +9,11 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     background: transparent;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background: transparent;
     color: white;
 }
@@ -130,7 +130,7 @@ nav ul li a:hover {
     padding: 0px 5px;
 }
 
-.menshow:hover{
+.menshow:hover {
     cursor: pointer;
 }
 
@@ -157,12 +157,13 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-.product{
+.product {
     margin: 10px 0;
     position: relative;
     text-decoration: none;
 }
-.txt{
+
+.txt {
     text-decoration: none;
 }
 
@@ -173,18 +174,19 @@ nav ul li a:hover {
 .storeimages {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
     gap: 30px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     overflow: scroll;
 }
 
-.storeimages::-webkit-scrollbar{
+.storeimages::-webkit-scrollbar {
     background: transparent;
 }
-.storeimages::-webkit-scrollbar-thumb{
+
+.storeimages::-webkit-scrollbar-thumb {
     background: transparent;
     color: white;
 }
@@ -261,7 +263,7 @@ footer {
 }
 
 /* Extra CSS */
-.mainheading{
+.mainheading {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -270,20 +272,20 @@ footer {
     gap: 20px;
 }
 
-.banner{
+.banner {
     position: absolute;
     bottom: 10px;
 }
 
-.banner h1{
+.banner h1 {
     font-size: 25px;
     text-shadow: 0 0 10px black;
     padding: 0 15px;
 }
 
-.img-size{
+.img-size {
     width: 260px;
-    height:330px;
+    height: 330px;
 }
 
 .dotbox {
@@ -292,20 +294,20 @@ footer {
     top: 5px;
 }
 
-.dot{
+.dot {
     width: 15px;
     height: 15px;
-    background: blue;
+    background: rgb(250, 47, 47);
     border-radius: 50%;
 }
 
 
-ul li ul.profile li{
+ul li ul.profile li {
     display: block;
 }
 
 
-ul li ul.profile{
+ul li ul.profile {
     margin-top: 15px;
     width: 100%;
     background: #333333;
@@ -315,15 +317,111 @@ ul li ul.profile{
     display: none;
 }
 
-
-.profont{
+.profont {
     font-size: 20px;
 }
 
-
-
-
-
-ul li:hover ul.profile{
+ul li:hover ul.profile {
     display: block;
+}
+
+@media (max-width:768px) {
+    .mainheading {
+        gap: 15px;
+    }
+
+    .mainh1 {
+        margin-top: 15px;
+    }
+
+    .img-size {
+        width: 170px;
+        height: 210px;
+    }
+
+    .storeimages {
+        gap: 0;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .menshow {
+        margin-left: 15px;
+        font-size: 15px;
+    }
+
+    .banner h1 {
+        font-size: 18px;
+        padding: 0px 10px;
+    }
+
+    footer {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        margin-top: 30px;
+    }
+
+    .socialmedia {
+        gap: 15px;
+    }
+
+    .socialmedia a img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+    .img-size {
+        width: 220px;
+        height: 270px;
+    }
+
+    .storeimages {
+        justify-content: space-evenly;
+        margin: 0;
+    }
+}
+
+@media (min-width:1025px) and (max-width:1231px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .profont {
+        position: relative;
+        left: 80px;
+    }
+
+    .storeimages {
+        justify-content: center;
+        gap: 50px;
+        margin: 0;
+    }
+
+    .img-size {
+        width: 280px;
+        height: 340px;
+    }
+}
+@media (min-width:1233px) and (max-width:1440px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .profont {
+        position: relative;
+        left: 80px;
+    }
+
+    .storeimages {
+        justify-content: center;
+        gap: 50px;
+        margin: 0;
+    }
+
+    .img-size {
+        width: 280px;
+        height: 340px;
+    }
 }
